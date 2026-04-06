@@ -14,13 +14,10 @@ body { background: #f0f2f8; color: #1a1a2e; padding: 20px; min-height: 100vh; }
 .title span { color: #7c3aed; }
 .subtitle { font-size: 12px; color: #666; margin-top: 4px; }
 
-/* BANNER */
 .fix-banner { background: #fff7ed; border: 2px solid #f97316; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
-.fix-banner h3 { color: #c2410c; font-size: 14px; margin-bottom: 10px; }
-.fix-banner ol { padding-left: 20px; font-size: 13px; color: #7c2d12; line-height: 2.4; }
-.steps-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-.fix-step { background: #fff; border: 1px solid #fed7aa; border-radius: 8px; padding: 7px 14px; font-size: 12px; font-weight: 600; color: #ea580c; }
-.btn-retry { background: #f97316; color: #fff; border: none; border-radius: 8px; padding: 9px 22px; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 12px; }
+.fix-banner h3 { color: #c2410c; font-size: 14px; margin-bottom: 8px; }
+.fix-banner p { font-size: 12px; color: #7c2d12; line-height: 1.8; }
+.btn-retry { background: #f97316; color: #fff; border: none; border-radius: 8px; padding: 9px 22px; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 10px; }
 .btn-retry:hover { opacity: 0.85; }
 .status-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 .status-chip { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
@@ -28,16 +25,12 @@ body { background: #f0f2f8; color: #1a1a2e; padding: 20px; min-height: 100vh; }
 .chip-err   { background: #fef2f2; color: #ef4444; }
 .chip-empty { background: #fefce8; color: #ca8a04; }
 
-/* SECTION LABELS */
 .section-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 1px; margin: 14px 0 7px; }
-
-/* SHEET TABS */
 .sheet-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
 .stab { padding: 5px 12px; border-radius: 20px; border: 2px solid #7c3aed; font-size: 11px; font-weight: 600; cursor: pointer; background: #7c3aed; color: #fff; transition: all .2s; }
 .stab.off { background: transparent; color: #7c3aed; }
 .stab.failed { border-color: #ef4444 !important; background: #fef2f2 !important; color: #ef4444 !important; cursor: default; }
 
-/* VIEW TABS */
 .view-tabs { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 .vtab { padding: 7px 18px; border-radius: 8px; border: 2px solid; font-size: 13px; font-weight: 700; cursor: pointer; transition: all .2s; }
 .vtab-comp { border-color: #7c3aed; background: #7c3aed; color: #fff; }
@@ -47,7 +40,6 @@ body { background: #f0f2f8; color: #1a1a2e; padding: 20px; min-height: 100vh; }
 .vtab-all  { border-color: #059669; background: #059669; color: #fff; }
 .vtab-all.off { background: transparent; color: #059669; }
 
-/* CARDS */
 .cards { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
 .card { background: #fff; border-radius: 12px; padding: 14px 16px; flex: 1; min-width: 150px; box-shadow: 0 1px 4px rgba(0,0,0,.08); border: 1px solid #e8eaf0; }
 .card.comp-card { border-top: 3px solid #7c3aed; }
@@ -56,7 +48,6 @@ body { background: #f0f2f8; color: #1a1a2e; padding: 20px; min-height: 100vh; }
 .card .val { font-size: 16px; font-weight: 700; color: #1a1a2e; margin: 5px 0 2px; }
 .card .rng { font-size: 10px; color: #bbb; }
 
-/* FILTERS */
 .fbox { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08); border: 1px solid #e8eaf0; }
 .frow { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-bottom: 12px; }
 .frow:last-child { margin-bottom: 0; }
@@ -70,18 +61,15 @@ body { background: #f0f2f8; color: #1a1a2e; padding: 20px; min-height: 100vh; }
 .btn-outline  { background: transparent; border: 1px solid #ccc; color: #666; }
 .btn-success  { background: #22c55e; color: #fff; }
 
-/* PARAM BUTTONS */
 .params { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
 .pbtn { padding: 5px 14px; border-radius: 20px; border: 2px solid; font-size: 11px; font-weight: 600; cursor: pointer; transition: all .2s; }
 
-/* CHARTS */
 .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .cbox { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); border: 1px solid #e8eaf0; }
 .cbox.full { grid-column: 1 / -1; }
 .ctitle { font-size: 13px; font-weight: 600; margin-bottom: 12px; color: #444; }
 canvas { max-height: 220px; }
 
-/* TABLE */
 .tbox { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); border: 1px solid #e8eaf0; }
 .ttitle { font-size: 13px; font-weight: 600; color: #444; }
 .tscroll { overflow-x: auto; margin-top: 12px; }
@@ -94,22 +82,15 @@ tr:hover td { background: #f9faff; }
 .progress-bar  { background: #e8eaf0; border-radius: 8px; height: 6px; margin: 8px 0; overflow: hidden; }
 .progress-fill { background: #7c3aed; height: 100%; border-radius: 8px; transition: width .3s; }
 .afl { font-size: 11px; color: #f59e0b; margin-top: 10px; }
-@media(max-width:768px){ .charts{ grid-template-columns:1fr } .cbox.full{ grid-column:1 } }
 
-/* Month badge colors */
-.badge-jan { background:#eff6ff; color:#3b82f6; }
-.badge-feb { background:#fdf4ff; color:#a855f7; }
-.badge-mar { background:#f0fdf4; color:#22c55e; }
-.badge-apr { background:#fff7ed; color:#f97316; }
-.badge-may { background:#fef2f2; color:#ef4444; }
-.badge-jun { background:#f0fdfa; color:#14b8a6; }
-.badge-jul { background:#fefce8; color:#ca8a04; }
-.badge-aug { background:#fff1f2; color:#f43f5e; }
-.badge-sep { background:#f0f9ff; color:#0ea5e9; }
-.badge-oct { background:#faf5ff; color:#8b5cf6; }
-.badge-nov { background:#fff7ed; color:#ea580c; }
-.badge-dec { background:#f8fafc; color:#475569; }
-.badge-def { background:#f1f5f9; color:#64748b; }
+.badge-jan{background:#eff6ff;color:#3b82f6} .badge-feb{background:#fdf4ff;color:#a855f7}
+.badge-mar{background:#f0fdf4;color:#22c55e} .badge-apr{background:#fff7ed;color:#f97316}
+.badge-may{background:#fef2f2;color:#ef4444} .badge-jun{background:#f0fdfa;color:#14b8a6}
+.badge-jul{background:#fefce8;color:#ca8a04} .badge-aug{background:#fff1f2;color:#f43f5e}
+.badge-sep{background:#f0f9ff;color:#0ea5e9} .badge-oct{background:#faf5ff;color:#8b5cf6}
+.badge-nov{background:#fff7ed;color:#ea580c} .badge-dec{background:#f8fafc;color:#475569}
+.badge-def{background:#f1f5f9;color:#64748b}
+@media(max-width:768px){.charts{grid-template-columns:1fr}.cbox.full{grid-column:1}}
 </style>
 </head>
 <body>
@@ -117,49 +98,33 @@ tr:hover td { background: #f9faff; }
 <div class="header">
   <div>
     <div class="title">📊 <span>Amitara</span> — Historical Data Explorer</div>
-    <div class="subtitle">7 Compressors · 7 Customers · All monthly sheets · JAN 2025 – DEC 2025</div>
+    <div class="subtitle">7 Compressors · 7 Customers · JAN–DEC 2025 · Update GIDs below if any month fails</div>
   </div>
   <span id="sync" style="font-size:12px;font-weight:600;color:#f59e0b">● Connecting...</span>
 </div>
 
-<!-- ERROR BANNER -->
 <div class="fix-banner" id="fixBanner" style="display:none">
-  <h3 id="bannerTitle">⚠️ Could not load data from Google Sheets</h3>
-  <ol>
-    <li>Open your Google Sheet: <strong>Amitara</strong></li>
-    <li>Click <strong>Share</strong> (top-right button)</li>
-    <li>Click <strong>"Change to anyone with the link"</strong></li>
-    <li>Set role to <strong>Viewer</strong> and click <strong>Done</strong></li>
-    <li>Come back here and click <strong>Retry</strong> below</li>
-  </ol>
-  <div class="steps-row">
-    <div class="fix-step">① Open Sheet</div>
-    <div class="fix-step">② Share button</div>
-    <div class="fix-step">③ Anyone with link</div>
-    <div class="fix-step">④ Viewer role</div>
-    <div class="fix-step">⑤ Retry ↓</div>
-  </div>
-  <br>
+  <h3 id="bannerTitle">⚠️ Some sheets failed</h3>
+  <p id="bannerDetail"></p>
+  <p style="margin-top:8px;font-size:12px;color:#92400e">
+    <strong>To fix a ✗ month:</strong> Open Google Sheets → click that month's tab → copy the <code>gid=</code> number from the browser URL → find <code>ALL_SHEETS</code> in the page source and update the gid.
+  </p>
   <button class="btn-retry" onclick="doFetch()">🔄 Retry</button>
   <div class="status-row" id="chipRow"></div>
 </div>
 
-<!-- Sheet Tabs -->
 <div class="section-label">📅 Monthly Sheets</div>
 <div class="sheet-tabs" id="sheetTabs"></div>
 
-<!-- View Tabs -->
 <div class="view-tabs">
-  <button class="vtab vtab-comp"      id="tabCOMP" onclick="setView('COMP')">⚙️ Compressors</button>
-  <button class="vtab vtab-cust off"  id="tabCUST" onclick="setView('CUST')">🏭 Customers</button>
-  <button class="vtab vtab-all  off"  id="tabALL"  onclick="setView('ALL')">🔀 All</button>
+  <button class="vtab vtab-comp"     id="tabCOMP" onclick="setView('COMP')">⚙️ Compressors</button>
+  <button class="vtab vtab-cust off" id="tabCUST" onclick="setView('CUST')">🏭 Customers</button>
+  <button class="vtab vtab-all  off" id="tabALL"  onclick="setView('ALL')">🔀 All</button>
 </div>
 
-<!-- Summary Cards -->
 <div class="section-label" id="cardsLabel">📈 Compressor Averages</div>
 <div class="cards" id="cards"></div>
 
-<!-- Filters -->
 <div class="fbox">
   <div class="frow">
     <div class="fg"><label>📅 Date From</label><input type="date" id="from"></div>
@@ -189,34 +154,19 @@ tr:hover td { background: #f9faff; }
       <label>🔍 Filter Column</label>
       <select id="fcol">
         <option value="">None</option>
-        <optgroup label="── Compressors (Flow) ──">
-          <option value="C1_FLOW">Comp 1 Flow</option>
-          <option value="C2_FLOW">Comp 2 Flow</option>
-          <option value="C3_FLOW">Comp 3 Flow</option>
-          <option value="C4_FLOW">Comp 4 Flow</option>
-          <option value="C5_FLOW">Comp 5 Flow</option>
-          <option value="C6_FLOW">Comp 6 Flow</option>
+        <optgroup label="── Compressors Flow ──">
+          <option value="C1_FLOW">Comp 1 Flow</option><option value="C2_FLOW">Comp 2 Flow</option>
+          <option value="C3_FLOW">Comp 3 Flow</option><option value="C4_FLOW">Comp 4 Flow</option>
+          <option value="C5_FLOW">Comp 5 Flow</option><option value="C6_FLOW">Comp 6 Flow</option>
           <option value="C7_FLOW">Comp 7 Flow</option>
         </optgroup>
-        <optgroup label="── Compressors (Power) ──">
-          <option value="C1_POWER">Comp 1 Power</option>
-          <option value="C2_POWER">Comp 2 Power</option>
-          <option value="C3_POWER">Comp 3 Power</option>
-          <option value="C4_POWER">Comp 4 Power</option>
-          <option value="C5_POWER">Comp 5 Power</option>
-          <option value="C6_POWER">Comp 6 Power</option>
+        <optgroup label="── Compressors Power ──">
+          <option value="C1_POWER">Comp 1 Power</option><option value="C2_POWER">Comp 2 Power</option>
+          <option value="C3_POWER">Comp 3 Power</option><option value="C4_POWER">Comp 4 Power</option>
+          <option value="C5_POWER">Comp 5 Power</option><option value="C6_POWER">Comp 6 Power</option>
           <option value="C7_POWER">Comp 7 Power</option>
         </optgroup>
-        <optgroup label="── Compressors (Pressure) ──">
-          <option value="C1_PRESSURE">Comp 1 Pressure</option>
-          <option value="C2_PRESSURE">Comp 2 Pressure</option>
-          <option value="C3_PRESSURE">Comp 3 Pressure</option>
-          <option value="C4_PRESSURE">Comp 4 Pressure</option>
-          <option value="C5_PRESSURE">Comp 5 Pressure</option>
-          <option value="C6_PRESSURE">Comp 6 Pressure</option>
-          <option value="C7_PRESSURE">Comp 7 Pressure</option>
-        </optgroup>
-        <optgroup label="── Customers (Flow) ──">
+        <optgroup label="── Customers Flow ──">
           <option value="NIHARIKA_FLOW">Niharika Flow</option>
           <option value="YASH_WEAVING_FLOW">Yash Weaving Flow</option>
           <option value="YASH_EXPORTS_FLOW">Yash Exports Flow</option>
@@ -230,17 +180,12 @@ tr:hover td { background: #f9faff; }
     <div class="fg">
       <label>Condition</label>
       <select id="fop">
-        <option value="gt">greater than</option>
-        <option value="lt">less than</option>
-        <option value="gte">greater or equal</option>
-        <option value="lte">less or equal</option>
+        <option value="gt">greater than</option><option value="lt">less than</option>
+        <option value="gte">greater or equal</option><option value="lte">less or equal</option>
         <option value="eq">equal to</option>
       </select>
     </div>
-    <div class="fg">
-      <label>Value</label>
-      <input type="number" id="fval" placeholder="e.g. 5000" step="any" style="width:110px">
-    </div>
+    <div class="fg"><label>Value</label><input type="number" id="fval" placeholder="e.g. 5000" step="any" style="width:110px"></div>
     <div class="fg" style="display:flex;gap:8px;align-items:flex-end">
       <button class="btn btn-primary" onclick="applyFilters()">Apply</button>
       <button class="btn btn-outline" onclick="doReset()">Reset</button>
@@ -250,22 +195,17 @@ tr:hover td { background: #f9faff; }
   <div class="afl" id="afl"></div>
 </div>
 
-<!-- Param toggles -->
 <div class="section-label">🔘 Toggle Parameters</div>
 <div class="params" id="params"></div>
 
-<!-- Charts -->
 <div class="charts">
-  <!-- Compressor section -->
-  <div class="cbox full" id="boxCompFlow"><div class="ctitle">⚙️ Compressor Flow Trends (CFM)</div><canvas id="compFlowChart"></canvas></div>
-  <div class="cbox full" id="boxCompPower"><div class="ctitle">⚡ Compressor Power Trends (kW)</div><canvas id="compPowerChart"></canvas></div>
-  <div class="cbox full" id="boxCompPressure"><div class="ctitle">📊 Compressor Pressure Trends (bar)</div><canvas id="compPressureChart"></canvas></div>
-  <!-- Customer section -->
-  <div class="cbox full" id="boxCustFlow"><div class="ctitle">🏭 Customer Flow Trends (CFM)</div><canvas id="custFlowChart"></canvas></div>
-  <div class="cbox full" id="boxCustPressure"><div class="ctitle">📊 Customer Pressure Trends (bar)</div><canvas id="custPressureChart"></canvas></div>
+  <div class="cbox full" id="boxCompFlow"><div class="ctitle">⚙️ Compressor Flow (CFM)</div><canvas id="compFlowChart"></canvas></div>
+  <div class="cbox full" id="boxCompPower"><div class="ctitle">⚡ Compressor Power (kW)</div><canvas id="compPowerChart"></canvas></div>
+  <div class="cbox full" id="boxCompPressure"><div class="ctitle">📊 Compressor Pressure (bar)</div><canvas id="compPressureChart"></canvas></div>
+  <div class="cbox full" id="boxCustFlow"><div class="ctitle">🏭 Customer Flow (CFM)</div><canvas id="custFlowChart"></canvas></div>
+  <div class="cbox full" id="boxCustPressure"><div class="ctitle">📊 Customer Pressure (bar)</div><canvas id="custPressureChart"></canvas></div>
 </div>
 
-<!-- Data Table -->
 <div class="tbox">
   <div style="display:flex;justify-content:space-between;align-items:center">
     <span class="ttitle" id="ttitle">Data Table</span>
@@ -276,719 +216,494 @@ tr:hover td { background: #f9faff; }
 <script>
 'use strict';
 
-// ═══════════════════════════════════════════════════════════════════
-//  CONFIG
-//  GIDs: Add the gid from each monthly tab URL
-//  To find GID: click a tab → look at browser URL …#gid=XXXXXXX
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════
+//  ★ CONFIG — Replace any GID marked TODO with the real number from the
+//    Google Sheets URL bar when you click that month's tab.
+//    Format: …/edit#gid=XXXXXXXXXX  ← copy just the digits
+// ═══════════════════════════════════════════════════════════════════════
 var SHEET_ID = '1ZcOITKmanBa_-kPaizyilR9eDhTZU-Exa_DYl7El0Wg';
 
 var ALL_SHEETS = [
-  { name: 'JAN 2025',  gid: '542321897'  },
-  { name: 'FEB 2025',  gid: 'PASTE_FEB_GID'   },
-  { name: 'MARCH 2025',gid: 'PASTE_MAR_GID'   },
-  { name: 'APRIL 2025',gid: 'PASTE_APR_GID'   },
-  { name: 'MAY 2025',  gid: 'PASTE_MAY_GID'   },
-  { name: 'JUN 2025',  gid: 'PASTE_JUN_GID'   },
-  { name: 'JULY 2025', gid: 'PASTE_JUL_GID'   },
-  { name: 'AUG 2025',  gid: 'PASTE_AUG_GID'   },
-  { name: 'SEP 2025',  gid: 'PASTE_SEP_GID'   },
-  { name: 'OCT 2025',  gid: 'PASTE_OCT_GID'   },
-  { name: 'NOV 2025',  gid: 'PASTE_NOV_GID'   },
-  { name: 'DEC 2025',  gid: 'PASTE_DEC_GID'   }
-  // ➕ To add a new month:
-  // 1. Open that tab in Google Sheets
-  // 2. Copy the gid= number from the browser URL bar
-  // 3. Replace PASTE_XXX_GID with the real number
+  { name:'JAN 2025',   gid:'0'  },  // ✓ confirmed
+  { name:'FEB 2025',   gid:'76781431'       },  // ← open FEB tab → copy gid from URL
+  { name:'MARCH 2025', gid:'1114090698'       },
+  { name:'APRIL 2025', gid:'643923794'       },
+  { name:'MAY 2025',   gid:'1052146886'       },
+  { name:'JUN 2025',   gid:'533896631'       },
+  { name:'JULY 2025',  gid:'1071755347'       },
+  { name:'AUG 2025',   gid:'908774171'       },
+  { name:'SEP 2025',   gid:'40911622'       },
+  { name:'OCT 2025',   gid:'922454128'       },
+  { name:'NOV 2025',   gid:'1032499805'       },
+  { name:'DEC 2025',   gid:'542321897'       }
 ];
 
-// ═══════════════════════════════════════════════════════════════════
-//  COLUMN MAPPING  (0-based column index in CSV)
+// ═══════════════════════════════════════════════════════════════════════
+//  COLUMN LAYOUT (0-based column index, data starts at CSV row 3)
 //
-//  Sheet layout (from screenshots):
-//  COMP 1:  cols A(0) B(1) C(2) D(3) E(4)   → Timestamp | Entity | flow | power | pressure
-//  COMP 2:  cols F(5) G(6) H(7) I(8) J(9)
-//  COMP 3:  cols K(10) L(11) M(12) N(13) O(14)
-//  COMP 4:  cols P(15) Q(16) R(17) S(18) T(19)
-//  COMP 5:  cols U(20) V(21) W(22) X(23) Y(24)   [NOTE: W=power appears blank for Comp4/5, still mapped]
-//  COMP 6:  cols Z(25) AA(26) AB(27) AC(28) AD(29) — wait, check image 2:
-//           O=Comp4-ts, P=entity, Q=flow, R=power, S=pressure  (15-19)
-//           T=Comp5-ts, U=entity, V=flow, W=power, X=pressure  (19-23) ... no, T=19
-//  After screenshots re-analysis:
-//  Comp4: O(14) P(15) Q(16) R(17) S(18)  [ts=14, entity=15, flow=16, power=17, pressure=18]
-//  Comp5: T(19) U(20) V(21) W(22) X(23)  
-//  Comp6: Y(24) Z(25) AA(26) AB(27) AC(28) — Image2 shows Y=Comp6 block
-//  Comp7: AD(29) AE(30) AF(31) AG(32) AH(33)? — Image3 shows AC=Comp7
+//  Each COMP block = 5 cols: Timestamp | EntityName | flow | power | pressure
+//    COMP1: 0-4 | COMP2: 5-9 | COMP3: 10-14 | COMP4: 15-19
+//    COMP5: 20-24 | COMP6: 25-29 | COMP7: 30-34
 //
-//  From screenshot col letters precisely:
-//  Img1: A-E=COMP1, F-J=COMP2, K-O=COMP3
-//  Img2: O-S=COMP4, T-X=COMP5, Y-AC=COMP6  (O=14,S=18, T=19,X=23, Y=24,AC=28)
-//  Img3: AC-AG=COMP7? No: "COMP 7" header over AC col → AC(28)-AG(32)
-//        Then NIHARIKA: AH(33) timestamp col, AI(34) flow, AJ(35) pressure? 
-//        Screenshot3 shows: AH=NIHARIKA Timestamp, AI=flow, AJ=pressure (3 cols)
-//  Img3+4 customers each have: Timestamp | flow | pressure  (3 cols, no entity/power)
-//        NIHARIKA:       AH(33), AI(34), AJ(35)
-//        YASH WEAVING:   AK(36), AL(37), AM(38)
-//        YASH EXPORTS:   AN(39? -- wait image3 shows "AN" label for YASH EXPORTS)
-//        Let me recount carefully from img3 col letters: AC AD AE AF AG AH AI AJ AK AL AM AN AO AP AQ AR
-//        Comp7: AC(28)=ts, AD(29)=entity, AE(30)=flow, AF(31)=power, AG(32)=pressure
-//        NIHARIKA: AH(33)=ts, AI(34)=flow, AJ(35)=pressure  [no entity, no power]
-//        YASH WEAVING: AJ/AK... img3 shows AJ=YASH WEAVING ts col
-//        Re-checking img3 header row: "NIHARIKA" is over AH-AJ (3 cols), 
-//           "YASH WEAVING" over AK-AM (3 cols), "YASH EXPORTS" over AN-AP (3 cols)
-//        img3 col labels: AC AD AE AF AG AH AI AJ AK AL AM AN AO AP AQ AR
-//        SAROJ: AQ-AS (3 cols)
-//        img4 shows: AM=YASH EXPORTS, AN=pressure, AO=SAROJ ts, AP=flow(?), AQ=SAROJ
-//           "BALAJI WEAVING" over AS-AU, "BHAGYA LAKSHMI" over AV-AX, "GAYATHIRI" over AY-BA
+//  Each CUSTOMER block = 3 cols: Timestamp | flow | pressure
+//    NIHARIKA:35-37 | YASH WEAVING:38-40 | YASH EXPORTS:41-43
+//    SAROJ:44-46 | BALAJI WEAVING:47-49 | BHAGYA LAKSHMI:50-52 | GAYATHIRI:53-55
 //
-//  FINAL MAPPING (all 0-based):
-//  COMP1:  ts=0,  flow=2,  power=3,  pressure=4
-//  COMP2:  ts=5,  flow=7,  power=8,  pressure=9
-//  COMP3:  ts=10, flow=12, power=13, pressure=14
-//  COMP4:  ts=15, flow=17, power=18, pressure=19  (but img2 O=14 so -1)
-//  Actually O is col index 14: A=0,B=1,...O=14, P=15,Q=16,R=17,S=18
-//  COMP4:  ts=14, flow=16, power=17, pressure=18
-//  T=19: COMP5: ts=19, flow=21, power=22, pressure=23
-//  Y=24: COMP6: ts=24, flow=26, power=27, pressure=28
-//  AD=29: COMP7: ts=29, flow=31, power=32, pressure=33
-//  AH=33: NIHARIKA: ts=33, flow=34, pressure=35  ← but 33=AH
-//          Wait AC=28, AD=29, AE=30, AF=31, AG=32, AH=33
-//          COMP7 section: header "COMP 7" over AC-AG → ts=28,entity=29,flow=30,power=31,pressure=32
-//  AH=33: NIHARIKA ts, AI=34 flow, AJ=35 pressure
-//  AK=36: YASH WEAVING ts, AL=37 flow, AM=38 pressure
-//  AN=39: YASH EXPORTS ts, AO=40 flow, AP=41 pressure
-//  AQ=42: SAROJ ts, AR=43 flow, AS=44 pressure
-//  AT=45: BALAJI WEAVING ts, AU=46 flow, AV=47 pressure
-//  AW=48: BHAGYA LAKSHMI ts, AX=49 flow, AY=50 pressure
-//  AZ=51: GAYATHIRI ts, BA=52 flow, BB=53 pressure
-// ═══════════════════════════════════════════════════════════════════
+//  NOTE: The sheet alternates data rows with "Power" rows for each comp.
+//  Row i  = entity (compressor body): has flow & pressure
+//  Row i+1= entity power: has power value
+//  Both rows share the same timestamp. We detect power rows by checking
+//  if the EntityName column contains "Power".
+// ═══════════════════════════════════════════════════════════════════════
 
-var SENSOR_DEFS = [
-  // Compressors — flow
-  { key:'C1_FLOW',     label:'Comp 1 Flow',     tsCol:0,  valCol:2,  unit:'CFM', group:'COMP', subgroup:'flow',     color:'#7c3aed' },
-  { key:'C2_FLOW',     label:'Comp 2 Flow',     tsCol:5,  valCol:7,  unit:'CFM', group:'COMP', subgroup:'flow',     color:'#a855f7' },
-  { key:'C3_FLOW',     label:'Comp 3 Flow',     tsCol:10, valCol:12, unit:'CFM', group:'COMP', subgroup:'flow',     color:'#c084fc' },
-  { key:'C4_FLOW',     label:'Comp 4 Flow',     tsCol:14, valCol:16, unit:'CFM', group:'COMP', subgroup:'flow',     color:'#6d28d9' },
-  { key:'C5_FLOW',     label:'Comp 5 Flow',     tsCol:19, valCol:21, unit:'CFM', group:'COMP', subgroup:'flow',     color:'#8b5cf6' },
-  { key:'C6_FLOW',     label:'Comp 6 Flow',     tsCol:24, valCol:26, unit:'CFM', group:'COMP', subgroup:'flow',     color:'#ddd6fe' },
-  { key:'C7_FLOW',     label:'Comp 7 Flow',     tsCol:28, valCol:30, unit:'CFM', group:'COMP', subgroup:'flow',     color:'#4c1d95' },
-  // Compressors — power
-  { key:'C1_POWER',    label:'Comp 1 Power',    tsCol:0,  valCol:3,  unit:'kW',  group:'COMP', subgroup:'power',    color:'#ef4444' },
-  { key:'C2_POWER',    label:'Comp 2 Power',    tsCol:5,  valCol:8,  unit:'kW',  group:'COMP', subgroup:'power',    color:'#f97316' },
-  { key:'C3_POWER',    label:'Comp 3 Power',    tsCol:10, valCol:13, unit:'kW',  group:'COMP', subgroup:'power',    color:'#fb923c' },
-  { key:'C4_POWER',    label:'Comp 4 Power',    tsCol:14, valCol:17, unit:'kW',  group:'COMP', subgroup:'power',    color:'#dc2626' },
-  { key:'C5_POWER',    label:'Comp 5 Power',    tsCol:19, valCol:22, unit:'kW',  group:'COMP', subgroup:'power',    color:'#b91c1c' },
-  { key:'C6_POWER',    label:'Comp 6 Power',    tsCol:24, valCol:27, unit:'kW',  group:'COMP', subgroup:'power',    color:'#fca5a5' },
-  { key:'C7_POWER',    label:'Comp 7 Power',    tsCol:28, valCol:31, unit:'kW',  group:'COMP', subgroup:'power',    color:'#991b1b' },
-  // Compressors — pressure
-  { key:'C1_PRESSURE', label:'Comp 1 Pressure', tsCol:0,  valCol:4,  unit:'bar', group:'COMP', subgroup:'pressure', color:'#0891b2' },
-  { key:'C2_PRESSURE', label:'Comp 2 Pressure', tsCol:5,  valCol:9,  unit:'bar', group:'COMP', subgroup:'pressure', color:'#06b6d4' },
-  { key:'C3_PRESSURE', label:'Comp 3 Pressure', tsCol:10, valCol:14, unit:'bar', group:'COMP', subgroup:'pressure', color:'#22d3ee' },
-  { key:'C4_PRESSURE', label:'Comp 4 Pressure', tsCol:14, valCol:18, unit:'bar', group:'COMP', subgroup:'pressure', color:'#0e7490' },
-  { key:'C5_PRESSURE', label:'Comp 5 Pressure', tsCol:19, valCol:23, unit:'bar', group:'COMP', subgroup:'pressure', color:'#155e75' },
-  { key:'C6_PRESSURE', label:'Comp 6 Pressure', tsCol:24, valCol:28, unit:'bar', group:'COMP', subgroup:'pressure', color:'#67e8f9' },
-  { key:'C7_PRESSURE', label:'Comp 7 Pressure', tsCol:28, valCol:32, unit:'bar', group:'COMP', subgroup:'pressure', color:'#083344' },
-  // Customers — flow
-  { key:'NIHARIKA_FLOW',       label:'Niharika Flow',       tsCol:33, valCol:34, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#059669' },
-  { key:'YASH_WEAVING_FLOW',   label:'Yash Weaving Flow',   tsCol:36, valCol:37, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#10b981' },
-  { key:'YASH_EXPORTS_FLOW',   label:'Yash Exports Flow',   tsCol:39, valCol:40, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#34d399' },
-  { key:'SAROJ_FLOW',          label:'Saroj Flow',          tsCol:42, valCol:43, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#065f46' },
-  { key:'BALAJI_WEAVING_FLOW', label:'Balaji Weaving Flow', tsCol:45, valCol:46, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#6ee7b7' },
-  { key:'BHAGYA_LAKSHMI_FLOW', label:'Bhagya Lakshmi Flow', tsCol:48, valCol:49, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#047857' },
-  { key:'GAYATHIRI_FLOW',      label:'Gayathiri Flow',      tsCol:51, valCol:52, unit:'CFM', group:'CUST', subgroup:'flow',     color:'#a7f3d0' },
-  // Customers — pressure
-  { key:'NIHARIKA_PRESSURE',       label:'Niharika Pressure',       tsCol:33, valCol:35, unit:'bar', group:'CUST', subgroup:'pressure', color:'#d946ef' },
-  { key:'YASH_WEAVING_PRESSURE',   label:'Yash Weaving Pressure',   tsCol:36, valCol:38, unit:'bar', group:'CUST', subgroup:'pressure', color:'#a21caf' },
-  { key:'YASH_EXPORTS_PRESSURE',   label:'Yash Exports Pressure',   tsCol:39, valCol:41, unit:'bar', group:'CUST', subgroup:'pressure', color:'#e879f9' },
-  { key:'SAROJ_PRESSURE',          label:'Saroj Pressure',          tsCol:42, valCol:44, unit:'bar', group:'CUST', subgroup:'pressure', color:'#86198f' },
-  { key:'BALAJI_WEAVING_PRESSURE', label:'Balaji Weaving Pressure', tsCol:45, valCol:47, unit:'bar', group:'CUST', subgroup:'pressure', color:'#f0abfc' },
-  { key:'BHAGYA_LAKSHMI_PRESSURE', label:'Bhagya Lakshmi Pressure', tsCol:48, valCol:50, unit:'bar', group:'CUST', subgroup:'pressure', color:'#701a75' },
-  { key:'GAYATHIRI_PRESSURE',      label:'Gayathiri Pressure',      tsCol:51, valCol:53, unit:'bar', group:'CUST', subgroup:'pressure', color:'#c026d3' }
+var COMP_BLOCKS = [
+  {id:'C1',label:'Comp 1',tsC:0, entC:1, flowC:2, powerC:3, presC:4 },
+  {id:'C2',label:'Comp 2',tsC:5, entC:6, flowC:7, powerC:8, presC:9 },
+  {id:'C3',label:'Comp 3',tsC:10,entC:11,flowC:12,powerC:13,presC:14},
+  {id:'C4',label:'Comp 4',tsC:15,entC:16,flowC:17,powerC:18,presC:19},
+  {id:'C5',label:'Comp 5',tsC:20,entC:21,flowC:22,powerC:23,presC:24},
+  {id:'C6',label:'Comp 6',tsC:25,entC:26,flowC:27,powerC:28,presC:29},
+  {id:'C7',label:'Comp 7',tsC:30,entC:31,flowC:32,powerC:33,presC:34}
+];
+var CUST_BLOCKS = [
+  {id:'NIHARIKA',      label:'Niharika',      tsC:35,flowC:36,presC:37},
+  {id:'YASH_WEAVING',  label:'Yash Weaving',  tsC:38,flowC:39,presC:40},
+  {id:'YASH_EXPORTS',  label:'Yash Exports',  tsC:41,flowC:42,presC:43},
+  {id:'SAROJ',         label:'Saroj',         tsC:44,flowC:45,presC:46},
+  {id:'BALAJI_WEAVING',label:'Balaji Weaving',tsC:47,flowC:48,presC:49},
+  {id:'BHAGYA_LAKSHMI',label:'Bhagya Lakshmi',tsC:50,flowC:51,presC:52},
+  {id:'GAYATHIRI',     label:'Gayathiri',     tsC:53,flowC:54,presC:55}
 ];
 
-// ═══════════════════════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════════════════════
-var activeParams = {};
-SENSOR_DEFS.forEach(function(s){ activeParams[s.key] = true; });
-var activeSheets = {};
-ALL_SHEETS.forEach(function(s){ activeSheets[s.name] = true; });
-var sheetStat = {};
-var currentView = 'COMP'; // COMP | CUST | ALL
-var allData = [], filteredData = [];
-var compFlowChart, compPowerChart, compPressureChart, custFlowChart, custPressureChart;
+var CF = ['#7c3aed','#a855f7','#c084fc','#6d28d9','#8b5cf6','#ddd6fe','#4c1d95'];
+var CP = ['#ef4444','#f97316','#fb923c','#dc2626','#b91c1c','#fca5a5','#991b1b'];
+var CR = ['#0891b2','#06b6d4','#22d3ee','#0e7490','#155e75','#67e8f9','#083344'];
+var KF = ['#059669','#10b981','#34d399','#065f46','#6ee7b7','#047857','#a7f3d0'];
+var KP = ['#d946ef','#a21caf','#e879f9','#86198f','#f0abfc','#701a75','#c026d3'];
 
-// ═══════════════════════════════════════════════════════════════════
-//  TIMESTAMP PARSER
-// ═══════════════════════════════════════════════════════════════════
-function parseTS(str) {
-  if (!str) return null;
-  str = String(str).trim();
-  if (!str) return null;
-  // DD-MM-YYYY HH:MM  or  DD/MM/YYYY HH:MM
-  var m = str.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})[,\s]+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
-  if (m) return new Date(+m[3], +m[2]-1, +m[1], +m[4], +m[5], +(m[6]||0));
-  // YYYY-MM-DDTHH:MM
-  var m2 = str.match(/^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})/);
-  if (m2) return new Date(+m2[1], +m2[2]-1, +m2[3], +m2[4], +m2[5]);
-  // DD-MM-YYYY (date only)
-  var m3 = str.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
-  if (m3) return new Date(+m3[3], +m3[2]-1, +m3[1]);
-  var d = new Date(str);
-  return isNaN(d) ? null : d;
+var SENSOR_DEFS = [];
+COMP_BLOCKS.forEach(function(c,i){
+  SENSOR_DEFS.push({key:c.id+'_FLOW',    label:c.label+' Flow',    unit:'CFM',group:'COMP',sub:'flow',    color:CF[i],valCol:c.flowC });
+  SENSOR_DEFS.push({key:c.id+'_POWER',   label:c.label+' Power',   unit:'kW', group:'COMP',sub:'power',   color:CP[i],valCol:c.powerC});
+  SENSOR_DEFS.push({key:c.id+'_PRESSURE',label:c.label+' Pressure',unit:'bar',group:'COMP',sub:'pressure',color:CR[i],valCol:c.presC });
+});
+CUST_BLOCKS.forEach(function(c,i){
+  SENSOR_DEFS.push({key:c.id+'_FLOW',    label:c.label+' Flow',    unit:'CFM',group:'CUST',sub:'flow',    color:KF[i],valCol:c.flowC});
+  SENSOR_DEFS.push({key:c.id+'_PRESSURE',label:c.label+' Pressure',unit:'bar',group:'CUST',sub:'pressure',color:KP[i],valCol:c.presC});
+});
+
+// ═══ STATE ═══════════════════════════════════════════════════════
+var activeParams={}, activeSheets={}, sheetStat={};
+SENSOR_DEFS.forEach(function(s){activeParams[s.key]=true;});
+ALL_SHEETS.forEach(function(s){activeSheets[s.name]=true;});
+var currentView='COMP', allData=[], filteredData=[];
+var charts={};
+
+// ═══ TIMESTAMP ════════════════════════════════════════════════════
+function parseTS(s){
+  if(!s)return null; s=String(s).trim(); if(!s)return null;
+  var m=s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})[,\s]+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+  if(m)return new Date(+m[3],+m[2]-1,+m[1],+m[4],+m[5],+(m[6]||0));
+  var m2=s.match(/^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})/);
+  if(m2)return new Date(+m2[1],+m2[2]-1,+m2[3],+m2[4],+m2[5]);
+  var d=new Date(s); return isNaN(d)?null:d;
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  CSV PARSER
-//  Row 0 = section headers (COMP 1, COMP 2, …)
-//  Row 1 = sub-headers (Timestamp, Entity Name, flow, power, pressure…)
-//  Row 2+ = data
-//  We skip rows 0 & 1, use column indices directly.
-// ═══════════════════════════════════════════════════════════════════
-function splitLine(line) {
-  var res = [], cur = '', inQ = false;
-  for (var i = 0; i < line.length; i++) {
-    var c = line[i];
-    if (c === '"') { inQ = !inQ; }
-    else if (c === ',' && !inQ) { res.push(cur); cur = ''; }
-    else { cur += c; }
+// ═══ CSV SPLIT ════════════════════════════════════════════════════
+function splitCSV(line){
+  var res=[],cur='',inQ=false;
+  for(var i=0;i<line.length;i++){
+    var c=line[i];
+    if(c==='"'){inQ=!inQ;}
+    else if(c===','&&!inQ){res.push(cur);cur='';}
+    else{cur+=c;}
   }
   res.push(cur);
-  return res.map(function(v){ return v.replace(/^"|"$/g,'').trim(); });
+  return res.map(function(v){return v.replace(/^"|"$/g,'').trim();});
 }
 
-function parseCSV(csv, sheetName) {
-  var lines = csv.replace(/\r/g,'').split('\n');
-  var rows = [];
-  // Data starts at line 2 (skip 2 header rows)
-  for (var i = 2; i < lines.length; i++) {
-    if (!lines[i].trim()) continue;
-    var cells = splitLine(lines[i]);
-    // Primary timestamp from col 0 (COMP 1 ts)
-    var tsStr = cells[0] || '';
-    if (!tsStr.trim()) continue;
-    var ts = parseTS(tsStr);
-    if (!ts || isNaN(ts)) continue;
+function pf(v){
+  if(v===undefined||v===null||v==='')return null;
+  var n=parseFloat(String(v).replace(/,/g,''));
+  return isNaN(n)?null:n;
+}
 
-    var obj = { _source: sheetName, _ts: ts };
-    SENSOR_DEFS.forEach(function(sd){
-      // Each sensor has its own timestamp column — use primary ts for all (same row = same time bucket)
-      var raw = (cells[sd.valCol] !== undefined) ? cells[sd.valCol] : '';
-      var n = parseFloat(raw.replace(/,/g,''));
-      obj[sd.key] = isNaN(n) ? null : n;
+// ═══ CSV PARSER ═══════════════════════════════════════════════════
+// Sheet rows: 0=section headers, 1=sub-headers, 2+=data
+// Data alternates: flow/pressure row THEN power row (per compressor)
+// We identify power rows by checking entity name cols for "power" keyword.
+function parseCSV(csv, sheetName){
+  var lines=csv.replace(/\r/g,'').split('\n');
+  // Collect data lines (skip first 2 header rows)
+  var dataLines=[];
+  for(var i=2;i<lines.length;i++){
+    if(lines[i].trim()) dataLines.push(splitCSV(lines[i]));
+  }
+
+  var rows=[];
+  var i=0;
+  while(i<dataLines.length){
+    var cells=dataLines[i];
+    var tsStr=cells[0]||'';
+    var ts=parseTS(tsStr);
+    if(!ts||isNaN(ts)){i++;continue;}
+
+    // Peek next line — is it a "Power" interleave row?
+    var next=dataLines[i+1]||null;
+    var isPowerNext=false;
+    if(next){
+      // Check entity name cols across comp blocks
+      var entStr=(next[1]||'')+(next[6]||'')+(next[11]||'')+(next[16]||'');
+      if(entStr.toLowerCase().indexOf('power')>=0) isPowerNext=true;
+    }
+
+    var mainRow=cells;
+    var powRow=isPowerNext?next:null;
+
+    var obj={_source:sheetName,_ts:ts};
+    COMP_BLOCKS.forEach(function(c){
+      obj[c.id+'_FLOW']    =pf(mainRow[c.flowC]);
+      obj[c.id+'_PRESSURE']=pf(mainRow[c.presC]);
+      // Power: prefer dedicated power row; fall back to main row power col
+      obj[c.id+'_POWER']   =powRow?pf(powRow[c.powerC]):pf(mainRow[c.powerC]);
+    });
+    CUST_BLOCKS.forEach(function(c){
+      obj[c.id+'_FLOW']    =pf(mainRow[c.flowC]);
+      obj[c.id+'_PRESSURE']=pf(mainRow[c.presC]);
     });
     rows.push(obj);
+    i+=isPowerNext?2:1;
   }
   return rows;
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  FETCH
-// ═══════════════════════════════════════════════════════════════════
-function fetchSheet(sheet) {
-  if (sheet.gid.indexOf('PASTE') === 0) {
-    sheetStat[sheet.name] = 'fail:GID not configured';
+// ═══ FETCH ════════════════════════════════════════════════════════
+function fetchSheet(sheet){
+  if(sheet.gid==='TODO'){
+    sheetStat[sheet.name]='fail:GID not set — open this tab in Sheets and copy the gid from the URL';
     return Promise.resolve([]);
   }
-  var gvizUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
-    '/gviz/tq?tqx=out:csv&gid=' + sheet.gid +
-    '&headers=2&tq=' + encodeURIComponent('select *') +
-    '&_=' + Date.now();
-
-  return fetch(gvizUrl, { mode: 'cors', cache: 'no-store' })
-    .then(function(r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
+  var url='https://docs.google.com/spreadsheets/d/'+SHEET_ID+
+          '/export?format=csv&gid='+sheet.gid+'&_='+Date.now();
+  return fetch(url,{cache:'no-store'})
+    .then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
       return r.text();
     })
-    .then(function(csv) {
-      if (!csv || csv.trim().charAt(0) === '<') throw new Error('PERMISSION_DENIED');
-      var withHeaders = 'SECTION_HEADERS\nSUB_HEADERS\n' + csv;
-      var rows = parseCSV(withHeaders, sheet.name);
-      sheetStat[sheet.name] = rows.length > 0 ? 'ok' : 'empty';
+    .then(function(csv){
+      if(!csv||csv.trim().charAt(0)==='<') throw new Error('Not CSV — sheet may not be public');
+      var rows=parseCSV(csv,sheet.name);
+      sheetStat[sheet.name]=rows.length>0?'ok':'empty';
+      console.log('['+sheet.name+'] '+rows.length+' rows');
       return rows;
     })
-    .catch(function() {
-      // Fallback: direct CSV export
-      var csvUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
-        '/export?format=csv&gid=' + sheet.gid + '&_=' + Date.now();
-      return fetch(csvUrl, { cache: 'no-store' })
-        .then(function(r2) {
-          if (!r2.ok) throw new Error('HTTP ' + r2.status);
-          return r2.text();
-        })
-        .then(function(csv2) {
-          if (!csv2 || csv2.trim().charAt(0) === '<') throw new Error('PERMISSION_DENIED');
-          var rows = parseCSV(csv2, sheet.name);
-          sheetStat[sheet.name] = rows.length > 0 ? 'ok' : 'empty';
-          return rows;
-        })
-        .catch(function(err2) {
-          sheetStat[sheet.name] = 'fail:' + err2.message;
-          console.warn('[' + sheet.name + '] Both fetch methods failed:', err2.message);
-          return [];
-        });
+    .catch(function(err){
+      sheetStat[sheet.name]='fail:'+err.message;
+      console.warn('['+sheet.name+']',err.message);
+      return[];
     });
 }
 
-function doFetch() {
-  document.getElementById('sync').textContent = '● Fetching...';
-  document.getElementById('sync').style.color = '#f59e0b';
-  document.getElementById('fixBanner').style.display = 'none';
-  document.getElementById('table').innerHTML =
-    '<div class="loading">⏳ Connecting to Google Sheets…' +
-    '<div style="font-size:11px;color:#aaa;margin-top:10px" id="progLabel">Starting…</div>' +
+function doFetch(){
+  document.getElementById('sync').textContent='● Fetching...';
+  document.getElementById('sync').style.color='#f59e0b';
+  document.getElementById('fixBanner').style.display='none';
+  document.getElementById('table').innerHTML=
+    '<div class="loading">⏳ Loading sheets…'+
+    '<div style="font-size:11px;color:#aaa;margin-top:8px" id="progLabel">Starting…</div>'+
     '<div class="progress-bar"><div class="progress-fill" id="progFill" style="width:0%"></div></div></div>';
 
-  allData = []; sheetStat = {};
-  var configured = ALL_SHEETS.filter(function(s){ return s.gid.indexOf('PASTE') < 0; });
-  var total = configured.length || 1, done = 0;
+  allData=[];sheetStat={};
+  var configured=ALL_SHEETS.filter(function(s){return s.gid!=='TODO';});
+  var total=Math.max(configured.length,1),done=0;
 
-  var promises = ALL_SHEETS.map(function(s) {
-    return fetchSheet(s).then(function(rows) {
-      if (s.gid.indexOf('PASTE') < 0) {
+  Promise.all(ALL_SHEETS.map(function(s){
+    return fetchSheet(s).then(function(rows){
+      if(s.gid!=='TODO'){
         done++;
-        var lbl = document.getElementById('progLabel');
-        var fill = document.getElementById('progFill');
-        if (lbl) lbl.textContent = 'Loaded: ' + s.name + ' (' + rows.length + ' rows)';
-        if (fill) fill.style.width = Math.round(done/total*100) + '%';
+        var lbl=document.getElementById('progLabel');
+        var fill=document.getElementById('progFill');
+        if(lbl) lbl.textContent='Loaded: '+s.name+' ('+rows.length+' rows)';
+        if(fill) fill.style.width=Math.round(done/total*100)+'%';
       }
-      return { name: s.name, rows: rows };
+      return rows;
     });
-  });
+  })).then(function(results){
+    results.forEach(function(rows){rows.forEach(function(r){allData.push(r);});});
+    allData.sort(function(a,b){return(a._ts||0)-(b._ts||0);});
 
-  Promise.all(promises).then(function(results) {
-    var seen = {};
-    results.forEach(function(r) {
-      r.rows.forEach(function(row) {
-        var k = row._source + '_' + (row._ts ? row._ts.getTime() : Math.random());
-        if (!seen[k]) { seen[k] = true; allData.push(row); }
-      });
-    });
-    allData.sort(function(a,b){ return (a._ts||0) - (b._ts||0); });
+    var oks   =ALL_SHEETS.filter(function(s){return sheetStat[s.name]==='ok';});
+    var fails =ALL_SHEETS.filter(function(s){return(sheetStat[s.name]||'').startsWith('fail');});
+    var todos =ALL_SHEETS.filter(function(s){return s.gid==='TODO';});
 
-    var fails  = Object.keys(sheetStat).filter(function(k){ return sheetStat[k].startsWith('fail'); });
-    var oks    = Object.keys(sheetStat).filter(function(k){ return sheetStat[k] === 'ok'; });
-
-    if (allData.length === 0) {
-      document.getElementById('fixBanner').style.display = 'block';
-      document.getElementById('bannerTitle').textContent =
-        '⚠️ No data loaded — make sheet public (steps below):';
+    if(allData.length===0){
+      document.getElementById('fixBanner').style.display='block';
+      document.getElementById('bannerTitle').textContent='⚠️ No data loaded';
+      document.getElementById('bannerDetail').innerHTML=
+        'Sheet must be shared as <strong>Anyone with the link → Viewer</strong>.<br>'+
+        fails.filter(function(s){return s.gid!=='TODO';}).map(function(s){return '✗ '+s.name+': '+(sheetStat[s.name]||'').replace('fail:','');}).join('<br>');
       renderChips();
-      document.getElementById('sync').textContent = '● Failed — no data';
-      document.getElementById('sync').style.color = '#ef4444';
-      document.getElementById('table').innerHTML =
-        '<div class="loading" style="color:#ef4444">❌ No data. Make your Google Sheet public — see orange banner above.</div>';
+      document.getElementById('sync').textContent='● Failed';
+      document.getElementById('sync').style.color='#ef4444';
+      document.getElementById('table').innerHTML='<div class="loading" style="color:#ef4444">❌ No data. Make sheet public.</div>';
     } else {
-      document.getElementById('sync').textContent =
-        '● Synced · ' + allData.length + ' rows · ' + oks.length + ' sheet(s) OK';
-      document.getElementById('sync').style.color = fails.length === 0 ? '#22c55e' : '#f59e0b';
-      if (fails.length > 0) {
-        document.getElementById('fixBanner').style.display = 'block';
-        document.getElementById('bannerTitle').textContent =
-          '⚠️ ' + fails.length + ' sheet(s) failed or not configured. Data may be partial.';
+      document.getElementById('sync').textContent=
+        '● Synced · '+allData.length+' rows · '+oks.length+'/'+ALL_SHEETS.length+' sheets OK'
+        +(todos.length?' · '+todos.length+' GIDs pending':'');
+      document.getElementById('sync').style.color=(fails.length-todos.length)===0?'#22c55e':'#f59e0b';
+      var realFails=fails.filter(function(s){return s.gid!=='TODO';});
+      if(realFails.length>0||todos.length>0){
+        document.getElementById('fixBanner').style.display='block';
+        document.getElementById('bannerTitle').textContent=
+          (realFails.length>0?realFails.length+' sheet(s) failed. ':'')+(todos.length>0?todos.length+' GID(s) not yet configured.':'');
+        document.getElementById('bannerDetail').innerHTML=
+          realFails.map(function(s){return '✗ '+s.name+' — '+(sheetStat[s.name]||'').replace('fail:','');}).join('<br>')+
+          (todos.length?'<br>⚙ '+todos.map(function(s){return s.name;}).join(', ')+' — GIDs not set yet':'');
         renderChips();
       }
     }
-    buildSheetTabs(); buildCards(); buildParamButtons(); applyFilters();
+    buildSheetTabs();buildCards();buildParamButtons();applyFilters();
   });
 }
 
-function renderChips() {
-  document.getElementById('chipRow').innerHTML = ALL_SHEETS.map(function(s) {
-    var st = sheetStat[s.name] || 'pending';
-    var cls = st === 'ok' ? 'chip-ok' : st.startsWith('fail') ? 'chip-err' : 'chip-empty';
-    var icon = st === 'ok' ? '✓ ' : st.startsWith('fail') ? '✗ ' : '~ ';
-    return '<span class="status-chip ' + cls + '">' + icon + s.name + '</span>';
+function renderChips(){
+  document.getElementById('chipRow').innerHTML=ALL_SHEETS.map(function(s){
+    var st=sheetStat[s.name]||'pending';
+    var isTodo=s.gid==='TODO';
+    var cls=st==='ok'?'chip-ok':st.startsWith('fail')?'chip-err':'chip-empty';
+    var icon=st==='ok'?'✓ ':st.startsWith('fail')?'✗ ':'⚙ ';
+    return '<span class="status-chip '+cls+'">'+(isTodo?'⚙ ':icon)+s.name+'</span>';
   }).join('');
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  HELPERS
-// ═══════════════════════════════════════════════════════════════════
-function fmtTS(ts) {
-  if (!ts) return '—';
-  var d = (ts instanceof Date) ? ts : new Date(ts);
-  if (isNaN(d)) return String(ts);
-  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' +
-    String(d.getDate()).padStart(2,'0') + ' ' +
-    String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+// ═══ HELPERS ══════════════════════════════════════════════════════
+function fmtTS(ts){
+  if(!ts)return'—';var d=ts instanceof Date?ts:new Date(ts);if(isNaN(d))return String(ts);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
 }
-function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
-function badgeClass(s) {
-  s = (s||'').toUpperCase();
-  var map = { JAN:'jan',FEB:'feb',MARCH:'mar',MAR:'mar',APRIL:'apr',APR:'apr',
-              MAY:'may',JUN:'jun',JUNE:'jun',JUL:'jul',JULY:'jul',AUG:'aug',
-              SEP:'sep',OCT:'oct',NOV:'nov',DEC:'dec' };
-  for (var k in map) { if (s.indexOf(k) >= 0) return 'badge-' + map[k]; }
-  return 'badge-def';
+function num(v){var n=parseFloat(v);return isNaN(n)?null:n;}
+function badgeClass(s){
+  s=(s||'').toUpperCase();
+  var map={JAN:'jan',FEB:'feb',MARCH:'mar',MAR:'mar',APRIL:'apr',APR:'apr',MAY:'may',JUN:'jun',JUNE:'jun',JUL:'jul',JULY:'jul',AUG:'aug',SEP:'sep',OCT:'oct',NOV:'nov',DEC:'dec'};
+  for(var k in map){if(s.indexOf(k)>=0)return'badge-'+map[k];}return'badge-def';
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  UI BUILDERS
-// ═══════════════════════════════════════════════════════════════════
-function buildSheetTabs() {
-  var div = document.getElementById('sheetTabs');
-  div.innerHTML = '';
-  ALL_SHEETS.forEach(function(s) {
-    var btn = document.createElement('button');
-    var failed = (sheetStat[s.name]||'').startsWith('fail');
-    var notConfigured = s.gid.indexOf('PASTE') === 0;
-    btn.className = 'stab' + (activeSheets[s.name] && !notConfigured ? '' : ' off') +
-                    (failed || notConfigured ? ' failed' : '');
-    btn.textContent = s.name + (failed ? ' ✗' : notConfigured ? ' ⚙' : '');
-    btn.title = notConfigured ? 'GID not configured yet — edit ALL_SHEETS in the code' : '';
-    if (!failed && !notConfigured) {
-      btn.onclick = (function(name, b){
-        return function(){
-          activeSheets[name] = !activeSheets[name];
-          b.classList.toggle('off');
-          applyFilters();
-        };
-      })(s.name, btn);
+// ═══ UI BUILDERS ══════════════════════════════════════════════════
+function buildSheetTabs(){
+  var div=document.getElementById('sheetTabs');div.innerHTML='';
+  ALL_SHEETS.forEach(function(s){
+    var btn=document.createElement('button');
+    var failed=(sheetStat[s.name]||'').startsWith('fail');
+    var todo=s.gid==='TODO';
+    btn.className='stab'+(activeSheets[s.name]&&!todo?'':' off')+(failed||todo?' failed':'');
+    btn.textContent=s.name+(failed?' ✗':todo?' ⚙':'');
+    btn.title=todo?'GID not configured':'';
+    if(!failed&&!todo){
+      btn.onclick=(function(name,b){return function(){activeSheets[name]=!activeSheets[name];b.classList.toggle('off');applyFilters();};})(s.name,btn);
     }
     div.appendChild(btn);
   });
 }
 
-function setView(v) {
-  currentView = v;
-  ['COMP','CUST','ALL'].forEach(function(x){
-    var el = document.getElementById('tab'+x);
-    if (el) el.classList.toggle('off', x !== v);
-  });
-  document.getElementById('cardsLabel').textContent =
-    v === 'COMP' ? '📈 Compressor Averages' :
-    v === 'CUST' ? '📈 Customer Averages' : '📈 All Averages';
-  buildCards(); filterParamButtons(); renderAll(aggregate(filteredData));
+function setView(v){
+  currentView=v;
+  ['COMP','CUST','ALL'].forEach(function(x){var el=document.getElementById('tab'+x);if(el)el.classList.toggle('off',x!==v);});
+  document.getElementById('cardsLabel').textContent=v==='COMP'?'📈 Compressor Averages':v==='CUST'?'📈 Customer Averages':'📈 All Averages';
+  buildCards();filterParamButtons();renderAll(aggregate(filteredData));
 }
 
-function buildParamButtons() {
-  var div = document.getElementById('params');
-  div.innerHTML = '';
-  SENSOR_DEFS.forEach(function(p) {
-    var btn = document.createElement('button');
-    btn.className = 'pbtn';
-    btn.textContent = p.label;
-    btn.dataset.group = p.group;
-    btn.style.cssText = 'border-color:' + p.color + ';background:' + p.color + ';color:#fff';
-    btn.onclick = (function(key, color, b){
-      return function(){
-        activeParams[key] = !activeParams[key];
-        b.style.background = activeParams[key] ? color : 'transparent';
-        b.style.color = activeParams[key] ? '#fff' : color;
-        renderAll(aggregate(filteredData));
-      };
-    })(p.key, p.color, btn);
+function buildParamButtons(){
+  var div=document.getElementById('params');div.innerHTML='';
+  SENSOR_DEFS.forEach(function(p){
+    var btn=document.createElement('button');
+    btn.className='pbtn';btn.textContent=p.label;btn.dataset.group=p.group;
+    btn.style.cssText='border-color:'+p.color+';background:'+p.color+';color:#fff';
+    btn.onclick=(function(key,color,b){return function(){
+      activeParams[key]=!activeParams[key];
+      b.style.background=activeParams[key]?color:'transparent';
+      b.style.color=activeParams[key]?'#fff':color;
+      renderAll(aggregate(filteredData));
+    };})(p.key,p.color,btn);
     div.appendChild(btn);
   });
   filterParamButtons();
 }
+function filterParamButtons(){document.querySelectorAll('.pbtn').forEach(function(b){b.style.display=(currentView==='ALL'||currentView===b.dataset.group)?'':'none';});}
 
-function filterParamButtons() {
-  document.querySelectorAll('.pbtn').forEach(function(btn){
-    btn.style.display = (currentView === 'ALL' || currentView === btn.dataset.group) ? '' : 'none';
-  });
-}
-
-function buildCards() {
-  var div = document.getElementById('cards');
-  div.innerHTML = '';
-  var defs = [];
-  if (currentView === 'COMP' || currentView === 'ALL') {
-    ['C1','C2','C3','C4','C5','C6','C7'].forEach(function(c, i){
-      defs.push({ key:c+'_FLOW',     label:'Comp '+(i+1)+' Avg Flow',     unit:'CFM', cls:'comp-card' });
-      defs.push({ key:c+'_POWER',    label:'Comp '+(i+1)+' Avg Power',    unit:'kW',  cls:'comp-card' });
-      defs.push({ key:c+'_PRESSURE', label:'Comp '+(i+1)+' Avg Pressure', unit:'bar', cls:'comp-card' });
+function buildCards(){
+  var div=document.getElementById('cards');div.innerHTML='';
+  var defs=[];
+  if(currentView==='COMP'||currentView==='ALL'){
+    COMP_BLOCKS.forEach(function(c){
+      defs.push({key:c.id+'_FLOW',    label:c.label+' Flow',    unit:'CFM',cls:'comp-card'});
+      defs.push({key:c.id+'_POWER',   label:c.label+' Power',   unit:'kW', cls:'comp-card'});
+      defs.push({key:c.id+'_PRESSURE',label:c.label+' Pressure',unit:'bar',cls:'comp-card'});
     });
   }
-  if (currentView === 'CUST' || currentView === 'ALL') {
-    ['NIHARIKA','YASH_WEAVING','YASH_EXPORTS','SAROJ','BALAJI_WEAVING','BHAGYA_LAKSHMI','GAYATHIRI'].forEach(function(c){
-      var label = c.replace(/_/g,' ');
-      defs.push({ key:c+'_FLOW',     label:label+' Flow',     unit:'CFM', cls:'cust-card' });
-      defs.push({ key:c+'_PRESSURE', label:label+' Pressure', unit:'bar', cls:'cust-card' });
+  if(currentView==='CUST'||currentView==='ALL'){
+    CUST_BLOCKS.forEach(function(c){
+      defs.push({key:c.id+'_FLOW',    label:c.label+' Flow',    unit:'CFM',cls:'cust-card'});
+      defs.push({key:c.id+'_PRESSURE',label:c.label+' Pressure',unit:'bar',cls:'cust-card'});
     });
   }
   defs.forEach(function(d){
-    var c = document.createElement('div');
-    c.className = 'card ' + d.cls;
-    c.innerHTML = '<div class="lbl">' + d.label + '</div>' +
-                  '<div class="val" id="cv_' + d.key + '">—</div>' +
-                  '<div class="rng" id="cr_' + d.key + '"></div>';
-    div.appendChild(c);
+    var el=document.createElement('div');el.className='card '+d.cls;
+    el.innerHTML='<div class="lbl">'+d.label+'</div><div class="val" id="cv_'+d.key+'">—</div><div class="rng" id="cr_'+d.key+'"></div>';
+    div.appendChild(el);
   });
-  window._cardDefs = defs;
+  window._cardDefs=defs;
 }
-
-function updateCards(data) {
-  if (!window._cardDefs) return;
+function updateCards(data){
+  if(!window._cardDefs)return;
   window._cardDefs.forEach(function(d){
-    var vals = data.map(function(r){ return num(r[d.key]); }).filter(function(v){ return v !== null; });
-    var av = document.getElementById('cv_' + d.key);
-    var rg = document.getElementById('cr_' + d.key);
-    if (!av) return;
-    if (!vals.length) { av.textContent = '—'; if(rg) rg.textContent = ''; return; }
-    var avg = vals.reduce(function(a,b){ return a+b; },0) / vals.length;
-    av.textContent = avg.toFixed(2) + ' ' + d.unit;
-    if (rg) rg.textContent = 'Min ' + Math.min.apply(null,vals).toFixed(2) + ' · Max ' + Math.max.apply(null,vals).toFixed(2);
+    var vals=data.map(function(r){return num(r[d.key]);}).filter(function(v){return v!==null;});
+    var av=document.getElementById('cv_'+d.key),rg=document.getElementById('cr_'+d.key);
+    if(!av)return;
+    if(!vals.length){av.textContent='—';if(rg)rg.textContent='';return;}
+    var avg=vals.reduce(function(a,b){return a+b;},0)/vals.length;
+    av.textContent=avg.toFixed(2)+' '+d.unit;
+    if(rg)rg.textContent='Min '+Math.min.apply(null,vals).toFixed(2)+' · Max '+Math.max.apply(null,vals).toFixed(2);
   });
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  FILTERS
-// ═══════════════════════════════════════════════════════════════════
-function applyFilters() {
-  var from = document.getElementById('from').value;
-  var to   = document.getElementById('to').value;
-  var col  = document.getElementById('fcol').value;
-  var op   = document.getElementById('fop').value;
-  var val  = parseFloat(document.getElementById('fval').value);
-  var actNames = Object.keys(activeSheets).filter(function(k){ return activeSheets[k]; });
-
-  filteredData = allData.filter(function(row){
-    if (actNames.length > 0 && actNames.indexOf(row._source) < 0) return false;
-    if (from || to) {
-      var ts = row._ts; if (!ts) return false;
-      if (from && ts < new Date(from)) return false;
-      if (to   && ts > new Date(to + 'T23:59:59')) return false;
-    }
-    if (col && !isNaN(val)) {
-      var rv = num(row[col]); if (rv === null) return false;
-      if (op==='gt'  && rv <= val) return false;
-      if (op==='lt'  && rv >= val) return false;
-      if (op==='gte' && rv <  val) return false;
-      if (op==='lte' && rv >  val) return false;
-      if (op==='eq'  && rv !== val) return false;
-    }
+// ═══ FILTERS ══════════════════════════════════════════════════════
+function applyFilters(){
+  var from=document.getElementById('from').value,to=document.getElementById('to').value;
+  var col=document.getElementById('fcol').value,op=document.getElementById('fop').value;
+  var val=parseFloat(document.getElementById('fval').value);
+  var actNames=Object.keys(activeSheets).filter(function(k){return activeSheets[k];});
+  filteredData=allData.filter(function(row){
+    if(actNames.length>0&&actNames.indexOf(row._source)<0)return false;
+    if(from||to){var ts=row._ts;if(!ts)return false;if(from&&ts<new Date(from))return false;if(to&&ts>new Date(to+'T23:59:59'))return false;}
+    if(col&&!isNaN(val)){var rv=num(row[col]);if(rv===null)return false;if(op==='gt'&&rv<=val)return false;if(op==='lt'&&rv>=val)return false;if(op==='gte'&&rv<val)return false;if(op==='lte'&&rv>val)return false;if(op==='eq'&&rv!==val)return false;}
     return true;
   });
-
-  updateActiveLabel();
-  var d = aggregate(filteredData);
-  updateCards(d); renderAll(d); renderTable(d);
+  updateActiveLabel();var d=aggregate(filteredData);updateCards(d);renderAll(d);renderTable(d);
+}
+function updateActiveLabel(){
+  var parts=[],from=document.getElementById('from').value,to=document.getElementById('to').value;
+  if(from||to)parts.push('Date: '+(from||'…')+' → '+(to||'…'));
+  var col=document.getElementById('fcol').value,val=document.getElementById('fval').value;
+  var opL={gt:'>',lt:'<',gte:'>=',lte:'<=',eq:'='};
+  if(col&&val)parts.push(col+' '+opL[document.getElementById('fop').value]+' '+val);
+  document.getElementById('afl').textContent=parts.length?'🔍 '+parts.join(' | '):'';
+}
+function applyQuickRange(){
+  var v=document.getElementById('qr').value;
+  if(!v||v==='all'){document.getElementById('from').value='';document.getElementById('to').value='';if(allData.length)applyFilters();return;}
+  var to=new Date(),fr=new Date();fr.setDate(fr.getDate()-parseInt(v));
+  document.getElementById('to').value=to.toISOString().split('T')[0];
+  document.getElementById('from').value=fr.toISOString().split('T')[0];
+  if(allData.length)applyFilters();
+}
+function doReset(){
+  ['qr','agg','fcol','fval','from','to'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('qr').value='all';document.getElementById('agg').value='monthly';
+  document.getElementById('afl').textContent='';
+  ALL_SHEETS.forEach(function(s){activeSheets[s.name]=true;});buildSheetTabs();applyFilters();
 }
 
-function updateActiveLabel() {
-  var parts = [];
-  var from = document.getElementById('from').value, to = document.getElementById('to').value;
-  if (from || to) parts.push('Date: ' + (from||'…') + ' → ' + (to||'…'));
-  var col = document.getElementById('fcol').value, val = document.getElementById('fval').value;
-  var opL = { gt:'>',lt:'<',gte:'>=',lte:'<=',eq:'=' };
-  if (col && val) parts.push(col + ' ' + opL[document.getElementById('fop').value] + ' ' + val);
-  document.getElementById('afl').textContent = parts.length ? '🔍 ' + parts.join(' | ') : '';
-}
-
-function applyQuickRange() {
-  var v = document.getElementById('qr').value;
-  if (!v || v === 'all') {
-    document.getElementById('from').value = '';
-    document.getElementById('to').value = '';
-    if (allData.length) applyFilters();
-    return;
-  }
-  var to = new Date(), fr = new Date();
-  fr.setDate(fr.getDate() - parseInt(v));
-  document.getElementById('to').value   = to.toISOString().split('T')[0];
-  document.getElementById('from').value = fr.toISOString().split('T')[0];
-  if (allData.length) applyFilters();
-}
-
-function doReset() {
-  document.getElementById('qr').value   = 'all';
-  document.getElementById('agg').value  = 'monthly';
-  document.getElementById('fcol').value = '';
-  document.getElementById('fval').value = '';
-  document.getElementById('from').value = '';
-  document.getElementById('to').value   = '';
-  document.getElementById('afl').textContent = '';
-  ALL_SHEETS.forEach(function(s){ activeSheets[s.name] = true; });
-  buildSheetTabs(); applyFilters();
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  AGGREGATION
-// ═══════════════════════════════════════════════════════════════════
-var MONTH_ORDER = { JAN:0,FEB:1,MARCH:2,MAR:2,APRIL:3,APR:3,MAY:4,JUNE:5,JUN:5,JULY:6,JUL:6,AUG:7,SEP:8,OCT:9,NOV:10,DEC:11 };
-
-function aggregate(data) {
-  var mode = document.getElementById('agg').value;
-  if (mode === 'raw') return data;
-  var groups = {};
+// ═══ AGGREGATION ══════════════════════════════════════════════════
+var MO={JAN:0,FEB:1,MARCH:2,MAR:2,APRIL:3,APR:3,MAY:4,JUNE:5,JUN:5,JULY:6,JUL:6,AUG:7,SEP:8,OCT:9,NOV:10,DEC:11};
+function aggregate(data){
+  var mode=document.getElementById('agg').value;
+  if(mode==='raw')return data;
+  var groups={};
   data.forEach(function(row){
-    var ts = row._ts, key;
-    if (mode === 'monthly') {
-      key = row._source || (ts ? ts.getFullYear() + '-' + String(ts.getMonth()+1).padStart(2,'0') : 'unknown');
-    } else {
-      if (!ts) return;
-      key = ts.getFullYear() + '-' + String(ts.getMonth()+1).padStart(2,'0') + '-' + String(ts.getDate()).padStart(2,'0');
-    }
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(row);
+    var ts=row._ts,key;
+    if(mode==='monthly'){key=row._source||'unknown';}
+    else{if(!ts)return;key=ts.getFullYear()+'-'+String(ts.getMonth()+1).padStart(2,'0')+'-'+String(ts.getDate()).padStart(2,'0');}
+    if(!groups[key])groups[key]=[];groups[key].push(row);
   });
-
-  var sortedKeys = Object.keys(groups).sort(function(a,b){
-    var ay = (a.match(/(\d{4})/)||[])[1], by = (b.match(/(\d{4})/)||[])[1];
-    if (ay && by && ay !== by) return parseInt(ay) - parseInt(by);
-    var au = a.toUpperCase(), bu = b.toUpperCase(), ai = -1, bi = -1;
-    Object.keys(MONTH_ORDER).forEach(function(k){
-      if (au.indexOf(k) >= 0) ai = MONTH_ORDER[k];
-      if (bu.indexOf(k) >= 0) bi = MONTH_ORDER[k];
-    });
-    if (ai >= 0 && bi >= 0) return ai - bi;
-    return a < b ? -1 : 1;
+  var skeys=Object.keys(groups).sort(function(a,b){
+    var ay=(a.match(/(\d{4})/)||[])[1],by=(b.match(/(\d{4})/)||[])[1];
+    if(ay&&by&&ay!==by)return parseInt(ay)-parseInt(by);
+    var au=a.toUpperCase(),bu=b.toUpperCase(),ai=-1,bi=-1;
+    Object.keys(MO).forEach(function(k){if(au.indexOf(k)>=0)ai=MO[k];if(bu.indexOf(k)>=0)bi=MO[k];});
+    if(ai>=0&&bi>=0)return ai-bi;return a<b?-1:1;
   });
-
-  return sortedKeys.map(function(k){
-    var rows = groups[k];
-    var avgRow = { _source: rows[0]._source, _ts: rows[0]._ts, _label: k };
+  return skeys.map(function(k){
+    var rows=groups[k],avgRow={_source:rows[0]._source,_ts:rows[0]._ts,_label:k};
     SENSOR_DEFS.forEach(function(sd){
-      var vals = rows.map(function(r){ return num(r[sd.key]); }).filter(function(v){ return v !== null; });
-      avgRow[sd.key] = vals.length ? vals.reduce(function(a,b){ return a+b; },0) / vals.length : null;
+      var vals=rows.map(function(r){return num(r[sd.key]);}).filter(function(v){return v!==null;});
+      avgRow[sd.key]=vals.length?vals.reduce(function(a,b){return a+b;},0)/vals.length:null;
     });
     return avgRow;
   });
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  CHARTS
-// ═══════════════════════════════════════════════════════════════════
-function renderAll(data) {
-  var labels = data.map(function(r){
-    if (r._label) return r._label;
-    return r._ts && !isNaN(r._ts) ? fmtTS(r._ts) : String(r._source||'');
-  });
+// ═══ CHARTS ═══════════════════════════════════════════════════════
+function renderAll(data){
+  var labels=data.map(function(r){return r._label||(r._ts&&!isNaN(r._ts)?fmtTS(r._ts):String(r._source||''));});
+  function mkDS(key,color,yAxis){
+    var sd=SENSOR_DEFS.find(function(s){return s.key===key;})||{label:key};
+    return{label:sd.label,data:data.map(function(r){return num(r[key]);}),borderColor:color,backgroundColor:color+'33',borderWidth:2,pointRadius:2,tension:0.3,yAxisID:yAxis};
+  }
+  var xS={ticks:{color:'#999',maxTicksLimit:12},grid:{color:'#eee'}};
+  var yL={type:'linear',position:'left', ticks:{color:'#999'},grid:{color:'#eee'}};
+  var yR={type:'linear',position:'right',ticks:{color:'#999'},grid:{drawOnChartArea:false}};
+  function opts(sc){return{responsive:true,maintainAspectRatio:true,animation:false,plugins:{legend:{labels:{color:'#555',font:{size:10}}}},scales:sc};}
 
-  function mkDS(key, color, yAxis) {
-    var sd = SENSOR_DEFS.filter(function(s){ return s.key === key; })[0];
-    return {
-      label: sd ? sd.label : key,
-      data: data.map(function(r){ return num(r[key]); }),
-      borderColor: color, backgroundColor: color + '33',
-      borderWidth: 2, pointRadius: 2.5, tension: 0.3, yAxisID: yAxis
-    };
+  var sC=currentView==='COMP'||currentView==='ALL';
+  var sK=currentView==='CUST'||currentView==='ALL';
+
+  function mkChart(id,boxId,show,datasets,scaleObj){
+    document.getElementById(boxId).style.display=show?'':'none';
+    if(charts[id]){charts[id].destroy();delete charts[id];}
+    if(show){charts[id]=new Chart(document.getElementById(id),{type:'line',data:{labels:labels,datasets:datasets},options:opts(scaleObj)});}
   }
 
-  var xS  = { ticks:{ color:'#999', maxTicksLimit:12 }, grid:{ color:'#eee' } };
-  var yL  = { type:'linear', position:'left',  ticks:{ color:'#999' }, grid:{ color:'#eee' } };
-  var yR  = { type:'linear', position:'right', ticks:{ color:'#999' }, grid:{ drawOnChartArea:false } };
-  function opts(sc){ return { responsive:true, maintainAspectRatio:true, animation:false,
-    plugins:{ legend:{ labels:{ color:'#555', font:{ size:10 } } } }, scales:sc }; }
+  mkChart('compFlowChart','boxCompFlow',sC,
+    COMP_BLOCKS.map(function(c,i){return activeParams[c.id+'_FLOW']?mkDS(c.id+'_FLOW',CF[i],i<4?'y':'y1'):null;}).filter(Boolean),
+    {y:yL,y1:yR,x:xS});
 
-  var showComp = currentView === 'COMP' || currentView === 'ALL';
-  var showCust = currentView === 'CUST' || currentView === 'ALL';
+  mkChart('compPowerChart','boxCompPower',sC,
+    COMP_BLOCKS.map(function(c,i){return activeParams[c.id+'_POWER']?mkDS(c.id+'_POWER',CP[i],i<4?'y':'y1'):null;}).filter(Boolean),
+    {y:yL,y1:yR,x:xS});
 
-  // COMP FLOW
-  document.getElementById('boxCompFlow').style.display = showComp ? '' : 'none';
-  if (compFlowChart) { compFlowChart.destroy(); compFlowChart = null; }
-  if (showComp) {
-    var cf = ['C1','C2','C3','C4','C5','C6','C7'];
-    var cfColors = ['#7c3aed','#a855f7','#c084fc','#6d28d9','#8b5cf6','#ddd6fe','#4c1d95'];
-    var cfDS = cf.filter(function(c){ return activeParams[c+'_FLOW']; })
-                 .map(function(c,i){ return mkDS(c+'_FLOW', cfColors[cf.indexOf(c)], i < 4 ? 'y' : 'y1'); });
-    compFlowChart = new Chart(document.getElementById('compFlowChart'),
-      { type:'line', data:{ labels:labels, datasets:cfDS }, options:opts({ y:yL, y1:yR, x:xS }) });
-  }
+  mkChart('compPressureChart','boxCompPressure',sC,
+    COMP_BLOCKS.map(function(c,i){return activeParams[c.id+'_PRESSURE']?mkDS(c.id+'_PRESSURE',CR[i],i<4?'y':'y1'):null;}).filter(Boolean),
+    {y:yL,y1:yR,x:xS});
 
-  // COMP POWER
-  document.getElementById('boxCompPower').style.display = showComp ? '' : 'none';
-  if (compPowerChart) { compPowerChart.destroy(); compPowerChart = null; }
-  if (showComp) {
-    var cp = ['C1','C2','C3','C4','C5','C6','C7'];
-    var cpColors = ['#ef4444','#f97316','#fb923c','#dc2626','#b91c1c','#fca5a5','#991b1b'];
-    var cpDS = cp.filter(function(c){ return activeParams[c+'_POWER']; })
-                 .map(function(c,i){ return mkDS(c+'_POWER', cpColors[cp.indexOf(c)], i < 4 ? 'y' : 'y1'); });
-    compPowerChart = new Chart(document.getElementById('compPowerChart'),
-      { type:'line', data:{ labels:labels, datasets:cpDS }, options:opts({ y:yL, y1:yR, x:xS }) });
-  }
+  mkChart('custFlowChart','boxCustFlow',sK,
+    CUST_BLOCKS.map(function(c,i){return activeParams[c.id+'_FLOW']?mkDS(c.id+'_FLOW',KF[i],i<4?'y':'y1'):null;}).filter(Boolean),
+    {y:yL,y1:yR,x:xS});
 
-  // COMP PRESSURE
-  document.getElementById('boxCompPressure').style.display = showComp ? '' : 'none';
-  if (compPressureChart) { compPressureChart.destroy(); compPressureChart = null; }
-  if (showComp) {
-    var cpr = ['C1','C2','C3','C4','C5','C6','C7'];
-    var cprColors = ['#0891b2','#06b6d4','#22d3ee','#0e7490','#155e75','#67e8f9','#083344'];
-    var cprDS = cpr.filter(function(c){ return activeParams[c+'_PRESSURE']; })
-                   .map(function(c,i){ return mkDS(c+'_PRESSURE', cprColors[cpr.indexOf(c)], i < 4 ? 'y' : 'y1'); });
-    compPressureChart = new Chart(document.getElementById('compPressureChart'),
-      { type:'line', data:{ labels:labels, datasets:cprDS }, options:opts({ y:yL, y1:yR, x:xS }) });
-  }
-
-  // CUST FLOW
-  document.getElementById('boxCustFlow').style.display = showCust ? '' : 'none';
-  if (custFlowChart) { custFlowChart.destroy(); custFlowChart = null; }
-  if (showCust) {
-    var custKeys = ['NIHARIKA','YASH_WEAVING','YASH_EXPORTS','SAROJ','BALAJI_WEAVING','BHAGYA_LAKSHMI','GAYATHIRI'];
-    var custColors = ['#059669','#10b981','#34d399','#065f46','#6ee7b7','#047857','#a7f3d0'];
-    var cfDS2 = custKeys.filter(function(c){ return activeParams[c+'_FLOW']; })
-                        .map(function(c,i){ return mkDS(c+'_FLOW', custColors[custKeys.indexOf(c)], i < 4 ? 'y' : 'y1'); });
-    custFlowChart = new Chart(document.getElementById('custFlowChart'),
-      { type:'line', data:{ labels:labels, datasets:cfDS2 }, options:opts({ y:yL, y1:yR, x:xS }) });
-  }
-
-  // CUST PRESSURE
-  document.getElementById('boxCustPressure').style.display = showCust ? '' : 'none';
-  if (custPressureChart) { custPressureChart.destroy(); custPressureChart = null; }
-  if (showCust) {
-    var custKeys2 = ['NIHARIKA','YASH_WEAVING','YASH_EXPORTS','SAROJ','BALAJI_WEAVING','BHAGYA_LAKSHMI','GAYATHIRI'];
-    var custPColors = ['#d946ef','#a21caf','#e879f9','#86198f','#f0abfc','#701a75','#c026d3'];
-    var cpDS2 = custKeys2.filter(function(c){ return activeParams[c+'_PRESSURE']; })
-                         .map(function(c,i){ return mkDS(c+'_PRESSURE', custPColors[custKeys2.indexOf(c)], i < 4 ? 'y' : 'y1'); });
-    custPressureChart = new Chart(document.getElementById('custPressureChart'),
-      { type:'line', data:{ labels:labels, datasets:cpDS2 }, options:opts({ y:yL, y1:yR, x:xS }) });
-  }
+  mkChart('custPressureChart','boxCustPressure',sK,
+    CUST_BLOCKS.map(function(c,i){return activeParams[c.id+'_PRESSURE']?mkDS(c.id+'_PRESSURE',KP[i],i<4?'y':'y1'):null;}).filter(Boolean),
+    {y:yL,y1:yR,x:xS});
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  TABLE
-// ═══════════════════════════════════════════════════════════════════
-function renderTable(data) {
-  var sensors = SENSOR_DEFS.filter(function(sd){
-    return currentView === 'ALL' || sd.group === currentView;
-  });
-  var show = data.slice(0, 300);
-  document.getElementById('ttitle').textContent =
-    'Data — showing ' + show.length + ' of ' + data.length + ' records';
-
-  var html = '<table><tr><th>Month</th><th>Timestamp</th>' +
-    sensors.map(function(sd){ return '<th>' + sd.label + ' (' + sd.unit + ')</th>'; }).join('') + '</tr>';
-
+// ═══ TABLE ════════════════════════════════════════════════════════
+function renderTable(data){
+  var sensors=SENSOR_DEFS.filter(function(sd){return currentView==='ALL'||sd.group===currentView;});
+  var show=data.slice(0,300);
+  document.getElementById('ttitle').textContent='Data — '+show.length+' of '+data.length+' records';
+  var html='<table><tr><th>Month</th><th>Timestamp</th>'+sensors.map(function(sd){return'<th>'+sd.label+' ('+sd.unit+')</th>';}).join('')+'</tr>';
   show.forEach(function(row){
-    var src = row._source || '';
-    html += '<tr><td><span class="badge ' + badgeClass(src) + '">' + src + '</span></td>';
-    html += '<td>' + fmtTS(row._ts) + '</td>';
-    html += sensors.map(function(sd){
-      var v = row[sd.key];
-      return '<td>' + (v !== null && v !== undefined ? (typeof v === 'number' ? v.toFixed(2) : v) : '—') + '</td>';
-    }).join('');
-    html += '</tr>';
+    html+='<tr><td><span class="badge '+badgeClass(row._source||'')+'">'+( row._source||'')+'</span></td>';
+    html+='<td>'+fmtTS(row._ts)+'</td>';
+    html+=sensors.map(function(sd){var v=row[sd.key];return'<td>'+(v!==null&&v!==undefined?(typeof v==='number'?v.toFixed(2):v):'—')+'</td>';}).join('');
+    html+='</tr>';
   });
-  document.getElementById('table').innerHTML = html + '</table>';
+  document.getElementById('table').innerHTML=html+'</table>';
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  EXPORT
-// ═══════════════════════════════════════════════════════════════════
-function doExport() {
-  var data = aggregate(filteredData);
-  var hdr = ['Month','Timestamp'].concat(SENSOR_DEFS.map(function(s){ return s.label + ' (' + s.unit + ')'; }));
-  var csv = hdr.join(',') + '\n';
+// ═══ EXPORT ═══════════════════════════════════════════════════════
+function doExport(){
+  var data=aggregate(filteredData);
+  var hdr=['Month','Timestamp'].concat(SENSOR_DEFS.map(function(s){return s.label+'('+s.unit+')';}));
+  var csv=hdr.join(',')+'\n';
   data.forEach(function(row){
-    var line = ['"'+(row._source||'')+'"', '"'+fmtTS(row._ts)+'"']
-      .concat(SENSOR_DEFS.map(function(sd){
-        var v = row[sd.key];
-        return (v !== null && v !== undefined) ? (typeof v === 'number' ? v.toFixed(2) : String(v)) : '';
-      }));
-    csv += line.join(',') + '\n';
+    csv+=['"'+(row._source||'')+'"','"'+fmtTS(row._ts)+'"'].concat(SENSOR_DEFS.map(function(sd){var v=row[sd.key];return v!==null&&v!==undefined?(typeof v==='number'?v.toFixed(2):String(v)):'';})).join(',')+'\n';
   });
-  var a = document.createElement('a');
-  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
-  a.download = 'amitara_data.csv';
-  a.click();
+  var a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download='amitara_data.csv';a.click();
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════════════════
-buildSheetTabs(); buildCards(); buildParamButtons(); doFetch();
+// ═══ INIT ════════════════════════════════════════════════════════
+buildSheetTabs();buildCards();buildParamButtons();doFetch();
 </script>
 </body>
 </html>

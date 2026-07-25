@@ -187,7 +187,7 @@ tr:hover td { background: #f9faff; }
     </div>
     <div class="fg"><label>Value</label><input type="number" id="fval" placeholder="e.g. 5000" step="any" style="width:110px"></div>
     <div class="fg" style="display:flex;gap:8px;align-items:flex-end">
-      <button class="btn btn-primary" onclick="applyFilters()">Apply</button>
+      <button class="btn btn-primary" onclick="doFetch()">Apply</button>
       <button class="btn btn-outline" onclick="doReset()">Reset</button>
       <button class="btn btn-success" onclick="doExport()">⬇ CSV</button>
     </div>
@@ -222,21 +222,48 @@ tr:hover td { background: #f9faff; }
 //    Format: …/edit#gid=XXXXXXXXXX  ← copy just the digits
 // ═══════════════════════════════════════════════════════════════════════
 var SHEET_ID = '1ZcOITKmanBa_-kPaizyilR9eDhTZU-Exa_DYl7El0Wg';
+// WASM604 PART B: data now comes from the WiseAir archive API (TimescaleDB).
+var API_BASE = 'https://168-144-76-214.sslip.io';
+var DEVICE_MAP = {
+  C1_FLOW:     {device:'AMI-Compressor 1',       keys:'flow'},
+  C1_PRESSURE: {device:'AMI-Compressor 1',       keys:'pressure'},
+  C1_POWER:    {device:'AMI-Compressor 1 Power', keys:'power'},
+  C2_FLOW:     {device:'AMI-Compressor 2',       keys:'flow'},
+  C2_PRESSURE: {device:'AMI-Compressor 2',       keys:'pressure'},
+  C2_POWER:    {device:'AMI-Compressor 2 Power', keys:'power'},
+  C3_FLOW:     {device:'AMI-Compressor 3',       keys:'flow'},
+  C3_PRESSURE: {device:'AMI-Compressor 3',       keys:'pressure'},
+  C3_POWER:    {device:'AMI-Compressor 3 Power', keys:'power'},
+  C4_FLOW:     {device:'AMI-Compressor 4',       keys:'flow'},
+  C4_PRESSURE: {device:'AMI-Compressor 4',       keys:'pressure'},
+  C4_POWER:    {device:'AMI-Compressor 4 Power', keys:'power'},
+  C5_FLOW:     {device:'AMI-Compressor 5',       keys:'flow'},
+  C5_PRESSURE: {device:'AMI-Compressor 5',       keys:'pressure'},
+  C5_POWER:    {device:'AMI-Compressor 5 Power', keys:'power'},
+  C6_FLOW:     {device:'AMI-Compressor 6',       keys:'flow'},
+  C6_PRESSURE: {device:'AMI-Compressor 6',       keys:'pressure'},
+  C6_POWER:    {device:'AMI-Compressor 6 Power', keys:'power'},
+  C7_FLOW:     {device:'AMI-Compressor 7',       keys:'flow'},
+  C7_PRESSURE: {device:'AMI-Compressor 7',       keys:'pressure'},
+  C7_POWER:    {device:'AMI-Compressor 7 Power', keys:'power'},
+  NIHARIKA_FLOW:     {device:'Niharika Flow', keys:'flow'},
+  NIHARIKA_PRESSURE: {device:'Niharika Flow', keys:'pressure'},
+  YASH_WEAVING_FLOW:     {device:'Yash Weaving Flow', keys:'flow'},
+  YASH_WEAVING_PRESSURE: {device:'Yash Weaving Flow', keys:'pressure'},
+  YASH_EXPORTS_FLOW:     {device:'Yash Exports Flow', keys:'flow'},
+  YASH_EXPORTS_PRESSURE: {device:'Yash Exports Flow', keys:'pressure'},
+  SAROJ_FLOW:     {device:'Saroj', keys:'flow'},
+  SAROJ_PRESSURE: {device:'Saroj', keys:'pressure'},
+  BALAJI_WEAVING_FLOW:     {device:'Balaji Weaving', keys:'flow'},
+  BALAJI_WEAVING_PRESSURE: {device:'Balaji Weaving', keys:'pressure'},
+  BHAGYA_LAKSHMI_FLOW:     {device:'Bhagyalakshmi', keys:'flow'},
+  BHAGYA_LAKSHMI_PRESSURE: {device:'Bhagyalakshmi', keys:'pressure'},
+  GAYATHIRI_FLOW:     {device:'Gayathri Flow', keys:'flow'},
+  GAYATHIRI_PRESSURE: {device:'Gayathri Flow', keys:'pressure'}
+};
 
-var ALL_SHEETS = [
-  { name:'JAN 2025',   gid:'0'  },  // ✓ confirmed
-  { name:'FEB 2025',   gid:'76781431'       },  // ← open FEB tab → copy gid from URL
-  { name:'MARCH 2025', gid:'1114090698'       },
-  { name:'APRIL 2025', gid:'643923794'       },
-  { name:'MAY 2025',   gid:'1052146886'       },
-  { name:'JUN 2025',   gid:'533896631'       },
-  { name:'JULY 2025',  gid:'1071755347'       },
-  { name:'AUG 2025',   gid:'908774171'       },
-  { name:'SEP 2025',   gid:'40911622'       },
-  { name:'OCT 2025',   gid:'922454128'       },
-  { name:'NOV 2025',   gid:'1032499805'       },
-  { name:'DEC 2025',   gid:'542321897'       }
-];
+
+var ALL_SHEETS = [ { name:'Archive', gid:'' } ];
 
 // ═══════════════════════════════════════════════════════════════════════
 //  COLUMN LAYOUT (0-based column index, data starts at CSV row 3)
@@ -405,90 +432,66 @@ function fetchSheet(sheet){
 }
 
 function doFetch(){
-  document.getElementById('sync').textContent='● Fetching...';
-  document.getElementById('sync').style.color='#f59e0b';
+  var sy=document.getElementById('sync');
+  sy.textContent='\u25CF Fetching...'; sy.style.color='#f59e0b';
   document.getElementById('fixBanner').style.display='none';
   document.getElementById('table').innerHTML=
-    '<div class="loading">⏳ Loading sheets…'+
-    '<div style="font-size:11px;color:#aaa;margin-top:8px" id="progLabel">Starting…</div>'+
+    '<div class="loading">\u23F3 Loading from WiseAir archive\u2026'+
+    '<div style="font-size:11px;color:#aaa;margin-top:10px" id="progLabel">Starting\u2026</div>'+
     '<div class="progress-bar"><div class="progress-fill" id="progFill" style="width:0%"></div></div></div>';
 
-  allData=[];sheetStat={};
-  var configured=ALL_SHEETS.filter(function(s){return s.gid!=='TODO';});
-  var total=Math.max(configured.length,1),done=0;
+  var fromV=document.getElementById('from').value;
+  var toV=document.getElementById('to').value;
+  var toMs = toV ? new Date(toV+'T23:59:59').getTime() : Date.now();
+  var fromMs = fromV ? new Date(fromV).getTime() : (toMs - 7*86400000);
 
-  Promise.all(ALL_SHEETS.map(function(s){
-    return fetchSheet(s).then(function(rows){
-      if(s.gid!=='TODO'){
+  var mapKeys = Object.keys(DEVICE_MAP);
+  var total = mapKeys.length, done = 0;
+  allData=[]; sheetStat={};
+
+  Promise.all(mapKeys.map(function(rk){
+    var m = DEVICE_MAP[rk];
+    var url = API_BASE+'/history?device='+encodeURIComponent(m.device)+
+              '&keys='+encodeURIComponent(m.keys)+'&from='+fromMs+'&to='+toMs+'&bucket=auto';
+    return fetch(url,{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(jd){ return {rk:rk, data:jd.data||[]}; })
+      .catch(function(e){ return {rk:rk, data:[]}; })
+      .then(function(res){
         done++;
-        var lbl=document.getElementById('progLabel');
-        var fill=document.getElementById('progFill');
-        if(lbl) lbl.textContent='Loaded: '+s.name+' ('+rows.length+' rows)';
+        var lbl=document.getElementById('progLabel'), fill=document.getElementById('progFill');
+        if(lbl) lbl.textContent='Loaded: '+rk+' ('+res.data.length+' points)';
         if(fill) fill.style.width=Math.round(done/total*100)+'%';
-      }
-      return rows;
-    });
+        return res;
+      });
   })).then(function(results){
-    results.forEach(function(rows){rows.forEach(function(r){allData.push(r);});});
-    allData.sort(function(a,b){return(a._ts||0)-(b._ts||0);});
-
-    var oks   =ALL_SHEETS.filter(function(s){return sheetStat[s.name]==='ok';});
-    var fails =ALL_SHEETS.filter(function(s){return(sheetStat[s.name]||'').startsWith('fail');});
-    var todos =ALL_SHEETS.filter(function(s){return s.gid==='TODO';});
+    var byTs={};
+    results.forEach(function(res){
+      res.data.forEach(function(p){
+        var t=Math.round(p.ts/60000)*60000;
+        var row=byTs[t];
+        if(!row){ row=byTs[t]={_source:'Archive', _ts:new Date(t)};
+          mapKeys.forEach(function(k){ row[k]=null; }); }
+        if(p.value!==null && p.value!==undefined) row[res.rk]=p.value;
+      });
+    });
+    allData=Object.keys(byTs).map(function(k){ return byTs[k]; });
+    allData.sort(function(a,b){ return a._ts-b._ts; });
 
     if(allData.length===0){
-      document.getElementById('fixBanner').style.display='block';
-      document.getElementById('bannerTitle').textContent='⚠️ No data loaded';
-      document.getElementById('bannerDetail').innerHTML=
-        'Sheet must be shared as <strong>Anyone with the link → Viewer</strong>.<br>'+
-        fails.filter(function(s){return s.gid!=='TODO';}).map(function(s){return '✗ '+s.name+': '+(sheetStat[s.name]||'').replace('fail:','');}).join('<br>');
-      renderChips();
-      document.getElementById('sync').textContent='● Failed';
+      document.getElementById('sync').textContent='\u25CF No data in range';
       document.getElementById('sync').style.color='#ef4444';
-      document.getElementById('table').innerHTML='<div class="loading" style="color:#ef4444">❌ No data. Make sheet public.</div>';
+      document.getElementById('table').innerHTML=
+        '<div class="loading" style="color:#ef4444">No data for the selected date range.</div>';
     } else {
       document.getElementById('sync').textContent=
-        '● Synced · '+allData.length+' rows · '+oks.length+'/'+ALL_SHEETS.length+' sheets OK'
-        +(todos.length?' · '+todos.length+' GIDs pending':'');
-      document.getElementById('sync').style.color=(fails.length-todos.length)===0?'#22c55e':'#f59e0b';
-      var realFails=fails.filter(function(s){return s.gid!=='TODO';});
-      if(realFails.length>0||todos.length>0){
-        document.getElementById('fixBanner').style.display='block';
-        document.getElementById('bannerTitle').textContent=
-          (realFails.length>0?realFails.length+' sheet(s) failed. ':'')+(todos.length>0?todos.length+' GID(s) not yet configured.':'');
-        document.getElementById('bannerDetail').innerHTML=
-          realFails.map(function(s){return '✗ '+s.name+' — '+(sheetStat[s.name]||'').replace('fail:','');}).join('<br>')+
-          (todos.length?'<br>⚙ '+todos.map(function(s){return s.name;}).join(', ')+' — GIDs not set yet':'');
-        renderChips();
-      }
+        '\u25CF Synced \u00B7 '+allData.length+' rows \u00B7 WiseAir archive';
+      document.getElementById('sync').style.color='#22c55e';
     }
     buildSheetTabs();buildCards();buildParamButtons();applyFilters();
   });
 }
 
-function renderChips(){
-  document.getElementById('chipRow').innerHTML=ALL_SHEETS.map(function(s){
-    var st=sheetStat[s.name]||'pending';
-    var isTodo=s.gid==='TODO';
-    var cls=st==='ok'?'chip-ok':st.startsWith('fail')?'chip-err':'chip-empty';
-    var icon=st==='ok'?'✓ ':st.startsWith('fail')?'✗ ':'⚙ ';
-    return '<span class="status-chip '+cls+'">'+(isTodo?'⚙ ':icon)+s.name+'</span>';
-  }).join('');
-}
-
-// ═══ HELPERS ══════════════════════════════════════════════════════
-function fmtTS(ts){
-  if(!ts)return'—';var d=ts instanceof Date?ts:new Date(ts);if(isNaN(d))return String(ts);
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
-}
-function num(v){var n=parseFloat(v);return isNaN(n)?null:n;}
-function badgeClass(s){
-  s=(s||'').toUpperCase();
-  var map={JAN:'jan',FEB:'feb',MARCH:'mar',MAR:'mar',APRIL:'apr',APR:'apr',MAY:'may',JUN:'jun',JUNE:'jun',JUL:'jul',JULY:'jul',AUG:'aug',SEP:'sep',OCT:'oct',NOV:'nov',DEC:'dec'};
-  for(var k in map){if(s.indexOf(k)>=0)return'badge-'+map[k];}return'badge-def';
-}
-
-// ═══ UI BUILDERS ══════════════════════════════════════════════════
 function buildSheetTabs(){
   var div=document.getElementById('sheetTabs');div.innerHTML='';
   ALL_SHEETS.forEach(function(s){
@@ -590,11 +593,11 @@ function updateActiveLabel(){
 }
 function applyQuickRange(){
   var v=document.getElementById('qr').value;
-  if(!v||v==='all'){document.getElementById('from').value='';document.getElementById('to').value='';if(allData.length)applyFilters();return;}
+  if(!v||v==='all'){document.getElementById('from').value='';document.getElementById('to').value='';doFetch();return;}
   var to=new Date(),fr=new Date();fr.setDate(fr.getDate()-parseInt(v));
   document.getElementById('to').value=to.toISOString().split('T')[0];
   document.getElementById('from').value=fr.toISOString().split('T')[0];
-  if(allData.length)applyFilters();
+  doFetch();
 }
 function doReset(){
   ['qr','agg','fcol','fval','from','to'].forEach(function(id){document.getElementById(id).value='';});
@@ -703,6 +706,11 @@ function doExport(){
 }
 
 // ═══ INIT ════════════════════════════════════════════════════════
+(function(){
+  var to=new Date(), fr=new Date(); fr.setDate(fr.getDate()-7);
+  document.getElementById('to').value=to.toISOString().split('T')[0];
+  document.getElementById('from').value=fr.toISOString().split('T')[0];
+})();
 buildSheetTabs();buildCards();buildParamButtons();doFetch();
 </script>
 </body>

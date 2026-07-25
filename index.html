@@ -224,6 +224,13 @@ tr:hover td { background: #f9faff; }
 var SHEET_ID = '1ZcOITKmanBa_-kPaizyilR9eDhTZU-Exa_DYl7El0Wg';
 // WASM604 PART B: data now comes from the WiseAir archive API (TimescaleDB).
 var API_BASE = 'https://168-144-76-214.sslip.io';
+function num(v){var n=parseFloat(v);return isNaN(n)?null:n;}
+function fmtTS(ts){
+  if(!ts) return '—';
+  var d=(ts instanceof Date)?ts:new Date(ts); if(isNaN(d)) return String(ts);
+  var p=function(n){return String(n).padStart(2,'0');};
+  return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes());
+}
 var DEVICE_MAP = {
   C1_FLOW:     {device:'AMI-Compressor 1',       keys:'flow'},
   C1_PRESSURE: {device:'AMI-Compressor 1',       keys:'pressure'},
@@ -431,7 +438,8 @@ function fetchSheet(sheet){
     });
 }
 
-function doFetch(){
+var _fetchGen=0;
+function doFetch(){ var _gen=++_fetchGen;
   var sy=document.getElementById('sync');
   sy.textContent='\u25CF Fetching...'; sy.style.color='#f59e0b';
   document.getElementById('fixBanner').style.display='none';
@@ -464,7 +472,7 @@ function doFetch(){
         if(fill) fill.style.width=Math.round(done/total*100)+'%';
         return res;
       });
-  })).then(function(results){
+  })).then(function(results){ if(_gen!==_fetchGen) return;
     var byTs={};
     results.forEach(function(res){
       res.data.forEach(function(p){

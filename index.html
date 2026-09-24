@@ -616,13 +616,14 @@ function doReset(){
 
 // ═══ AGGREGATION ══════════════════════════════════════════════════
 var MO={JAN:0,FEB:1,MARCH:2,MAR:2,APRIL:3,APR:3,MAY:4,JUNE:5,JUN:5,JULY:6,JUL:6,AUG:7,SEP:8,OCT:9,NOV:10,DEC:11};
+function badgeClass(src){return src?'b-'+String(src).toLowerCase().replace(/[^a-z0-9]+/g,'-'):'';}
 function aggregate(data){
   var mode=document.getElementById('agg').value;
   if(mode==='raw')return data;
   var groups={};
   data.forEach(function(row){
     var ts=row._ts,key;
-    if(mode==='monthly'){key=row._source||'unknown';}
+    if(mode==='monthly'){if(!ts||isNaN(ts))return;key=ts.getFullYear()+'-'+String(ts.getMonth()+1).padStart(2,'0');}
     else{if(!ts)return;key=ts.getFullYear()+'-'+String(ts.getMonth()+1).padStart(2,'0')+'-'+String(ts.getDate()).padStart(2,'0');}
     if(!groups[key])groups[key]=[];groups[key].push(row);
   });
@@ -634,7 +635,8 @@ function aggregate(data){
     if(ai>=0&&bi>=0)return ai-bi;return a<b?-1:1;
   });
   return skeys.map(function(k){
-    var rows=groups[k],avgRow={_source:rows[0]._source,_ts:rows[0]._ts,_label:k};
+    var rows=groups[k],lbl=k;if(mode==='monthly'){var mm=k.split('-');lbl=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(mm[1],10)-1]+' '+mm[0];}
+    var avgRow={_source:rows[0]._source,_ts:rows[0]._ts,_label:lbl,_n:rows.length};
     SENSOR_DEFS.forEach(function(sd){
       var vals=rows.map(function(r){return num(r[sd.key]);}).filter(function(v){return v!==null;});
       avgRow[sd.key]=vals.length?vals.reduce(function(a,b){return a+b;},0)/vals.length:null;

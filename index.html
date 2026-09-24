@@ -451,7 +451,7 @@ function doFetch(){ var _gen=++_fetchGen;
   var fromV=document.getElementById('from').value;
   var toV=document.getElementById('to').value;
   var toMs = toV ? new Date(toV+'T23:59:59').getTime() : Date.now();
-  var fromMs = fromV ? new Date(fromV).getTime() : (toMs - 7*86400000);
+  var fromMs = fromV ? new Date(fromV).getTime() : ((document.getElementById('qr').value==='all') ? Date.UTC(2024,0,1) : (toMs - 7*86400000));
 
   var mapKeys = Object.keys(DEVICE_MAP);
   var total = mapKeys.length, done = 0;

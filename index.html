@@ -520,7 +520,7 @@ function setView(v){
   currentView=v;
   ['COMP','CUST','ALL'].forEach(function(x){var el=document.getElementById('tab'+x);if(el)el.classList.toggle('off',x!==v);});
   document.getElementById('cardsLabel').textContent=v==='COMP'?'📈 Compressor Averages':v==='CUST'?'📈 Customer Averages':'📈 All Averages';
-  buildCards();filterParamButtons();renderAll(aggregate(filteredData));
+  buildCards();filterParamButtons();applyFilters();
 }
 
 function buildParamButtons(){
@@ -716,11 +716,7 @@ function doExport(){
 }
 
 // ═══ INIT ════════════════════════════════════════════════════════
-(function(){
-  var to=new Date(), fr=new Date(); fr.setDate(fr.getDate()-7);
-  document.getElementById('to').value=to.toISOString().split('T')[0];
-  document.getElementById('from').value=fr.toISOString().split('T')[0];
-})();
+// Quick range defaults to "All Time" — date boxes stay blank so the whole archive is queried.
 buildSheetTabs();buildCards();buildParamButtons();doFetch();
 </script>
 </body>
